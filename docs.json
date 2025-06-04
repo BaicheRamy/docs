@@ -17,8 +17,8 @@
             "group": "Getting Started",
             "pages": [
               "Overview",
-              "Quick Setup",
-              "Installation & Integration"
+              "QuickSetup",
+              "Installation&Integration"
             ]
           },
           {
@@ -27,6 +27,29 @@
               "Overview/DashboardWalkthrough",
               "Overview/KeyConcepts",
               "Overview/User&TeamManagement"
+            ]
+          },
+          {
+            "group": "Features Guide",
+            "pages": [
+              "Features/Inbox&Messaging",
+              "Features/ChatWidget",
+              "Features/Triggers",
+              "Features/Flows",
+              "Features/AuraAi",
+              "Features/Profiles",
+              "Features/KBAs",
+              "Features/Integrations"
+            ]
+          },
+          {
+            "group": "Troubleshooting & FAQs",
+            "pages": [
+              "FAQS/CommonSetupIssues",
+              "Features/ChatWidgetProblems",
+              "Features/MessageDeliveryIssues",
+              "Features/API&IntegrationProblems",
+              "Features/GeneralFAQs"
             ]
           }
         ]
