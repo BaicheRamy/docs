@@ -77,8 +77,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/Light.svg",
-    "dark": "/logo/Dark.svg"
+    "light": "/logo/Dark.svg",
+    "dark": "/logo/Light.svg"
   },
   "navbar": {
     "links": [
