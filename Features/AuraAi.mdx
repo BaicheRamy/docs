@@ -1,61 +1,108 @@
 ---
-title: "Aura AI Agent"
-description: "Aura AI is Emplorium’s built-in intelligent assistant, designed to enhance your customer support with automated responses, smart suggestions, and proactive engagement."
+
+title: "Aura AI"
+description: "Learn how Aura AI transforms customer conversations using contextual intelligence, external data sources, and smart fallback logic."
 icon: "Sparkles"
----
+-------------
 
-## What is Aura AI?
+## Overview
 
-Aura AI helps your team by:
+Aura AI is Emplorium’s intelligent assistant designed to automate and enhance conversations with your website visitors. It learns from various data sources, understands context, handles queries in real-time, and gracefully escalates to human agents when needed.
 
-- Automatically responding to common customer queries
-- Suggesting the best reply to agents in real time
-- Analyzing conversation sentiment and intent
-- Recommending knowledge base articles to users
+## What Makes Aura AI Powerful
 
-[insert screenshot_example here - Aura AI assisting in a conversation]
+* **Context-Aware Responses**: Aura AI uses session context, conversation history, and configured knowledge to generate smart replies.
+* **Multi-Source Learning**: Trains on your documents, articles, links, chat history, form values, company settings, and both external API data requests and data updates.
+* **Keyword Matching + Intent Detection**: Recognizes user intents via keyword triggers or detected meaning.
+* **Smart Escalation Rules**: Supports fallback tagging, human hand-off, and unanswered question tracking.
+* **Customizable Behaviors**: Responses, escalation logic, and visibility can be fine-tuned per use case.
 
-## Activating Aura AI
-
-1. Go to **Settings → AI Assistant**
-2. Toggle **Enable Aura AI**
-3. Configure default behaviors:
-   - Auto-reply on specific channels
-   - Confidence thresholds for when to reply
-   - Knowledge base access and limitations
-
-[insert screenshot_example here - AI activation settings panel]
-
-## Customizing Responses
-
-- Add **custom intents** to train Aura on specific business logic
-- Create fallback messages when AI is unsure
-- Use tone settings: Professional, Friendly, Neutral
-
-[insert screenshot_example here - Intent editor or fallback setup]
-
-## Use Cases
-
-- Handle FAQs 24/7 without agent involvement
-- Suggest articles inside the widget chat window
-- Detect negative sentiment and escalate to a human
-
-[insert screenshot_example here - AI escalation triggered on negative sentiment]
-
-## AI \+ Human Collaboration
-
-- AI can draft responses for agent approval
-- Notify agents when Aura steps in or pulls back
-- Seamlessly handoff between bot and human based on conditions
-
-## Monitoring & Training
-
-- View AI performance in **Analytics → AI Insights**
-- Track accuracy, engagement, and fallback rates
-- Retrain intents based on conversation data
-
-[insert screenshot_example here - AI performance dashboard]
+> \[add\_image\_here] – Aura AI behavior configuration screen
 
 ---
 
-### Next Steps
+## Data Sources Aura Learns From
+
+Aura is trained on the following sources:
+
+* **Chat History**: It continuously learns from past interactions during a session.
+* **Links & Articles**: Add URLs and internal articles to be parsed into its knowledge.
+* **Q\&A Pairs**: Define direct question-answer examples.
+* **Company Settings**: Includes business name, timezone, contact rules, and language preferences.
+* **Data Fields**: All fields collected via forms or populated manually.
+* **Data Requests**: External API queries Aura can run when specific keywords are detected (e.g., "order status").
+* **Data Updates**: API calls to update records, triggered by user actions or AI interpretation.
+
+> \[add\_image\_here] – Example of Data Request config and keyword assignment
+
+---
+
+## How It Works During a Chat
+
+1. **User Message Received**
+2. **Aura Matches Intent / Keyword**
+
+   * If match found in Q\&A, it replies.
+   * If match found in keyword-based data request, it fetches external info.
+   * If ambiguous or unknown, it applies fallback logic.
+3. **Contextual Memory**
+
+   * Retains session context (fields submitted, articles referenced, message trail).
+4. **Escalation or Follow-Up**
+
+   * If answer not found after multiple replies, it tags the message with `#fallback` and follows escalation rules.
+
+---
+
+## Fallback & Escalation Handling
+
+* **Fallback Tags**: When Aura cannot confidently respond, it tags the message with `#fallback`.
+* **Unanswered Count Tracking**: You can configure Aura to count how many fallback-tagged messages occur per session.
+* **Agent Escalation**: After X fallbacks, Aura prompts the user with options like:
+
+  * "Talk to a person"
+  * "That didn't help? Let me connect you."
+
+> \[add\_image\_here] – Fallback tag logic & escalation config
+
+---
+
+## Visibility Settings
+
+You can control how Aura behaves per route or page:
+
+* **Auto Visible on Load**
+* **Delay Appearance**
+* **Visible Only When Triggered**
+* **Hidden on Specific URLs**
+
+Use case example: Hide Aura during checkout or onboarding flows.
+
+---
+
+## Best Practices
+
+* Regularly update linked articles and Q\&A pairs.
+* Keep API responses fast—Aura expects responses under 3 seconds.
+* Use fallback tracking to identify gaps in knowledge.
+* Train with real customer queries via the chat history tool.
+
+---
+
+## Roadmap (What’s Coming Next)
+
+* **Multi-language fallback training**
+* **Live memory inspection for debugging**
+* **Personalized summaries at session end**
+* **Automated tagging based on sentiment**
+* **Time-based triggers for proactive outreach**
+
+---
+
+## Related Pages
+
+* [Data Requests](/features/integrations-and-extensions)
+* [Flow Builder](/features/flows)
+* [Trigger Conditions](/features/triggers)
+* [Fallback Rules](/configuration/routing-rules)
+* [Visibility Settings](/configuration/chat-widget)

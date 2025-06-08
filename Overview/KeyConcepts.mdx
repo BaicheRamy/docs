@@ -1,42 +1,124 @@
 ---
 title: "Key Concepts"
-description: "Understanding these key concepts and terms will help you make the most out of Emplorium:"
-icon: "book"
+description: "Understand the foundational ideas behind Emplorium to get the most out of your experience."
+icon: "Lightbulb"
 ---
 
-## Key Terms
+## What are Key Concepts?
 
-- **Conversation**: A dialogue between a customer and your business through any integrated channel (live chat, email, WhatsApp, etc.).
-- **Unified Inbox**: A single place where all customer conversations from different channels are managed.
-- **Widget**: A customizable live chat window integrated into your website, allowing visitors to interact instantly.
-- **Aura AI**: Emplorium’s intelligent assistant powered by AI to assist in customer interactions by automating responses, analyzing customer sentiment, and suggesting actions.
-- **Triggers & Automation**: Automated rules that initiate specific actions based on predefined conditions.
-- **Channels**: Communication methods integrated with Emplorium (e.g., live chat, email, SMS, WhatsApp, social media).
-- **Integrations**: Connections established between Emplorium and external platforms or services, enhancing your workflow and data management.
-- **Webhook**: An automated notification sent from Emplorium to external systems when certain events occur, such as receiving a new message.
-
-## Concepts Explained
-
-### Conversations & Messaging
-
-- Manage and respond to customer queries effectively through a single interface.
-- Utilize automation to streamline conversations and provide timely responses.
-
-### AI Assistance (Aura AI)
-
-- Deploy AI to enhance customer service, automate routine tasks, and provide intelligent suggestions.
-- Leverage AI insights to improve customer engagement and satisfaction.
-
-### Automation & Workflow
-
-- Set up triggers and actions to automate routine tasks.
-- Create workflows to efficiently manage customer interactions and internal processes.
-
-### Analytics
-
-- Analyze key performance metrics to understand customer behavior and team performance.
-- Use detailed analytics to refine strategies and improve customer engagement.
+Emplorium is structured around a few powerful building blocks that define how automation, assistance, and communication operate throughout your customer engagement lifecycle. Understanding these will help you implement smarter workflows and maximize the capabilities of the platform.
 
 ---
 
-### Next Steps
+## 1. Conversations
+
+At its core, Emplorium is a **conversation-centric platform**. All interactions—whether handled by agents or AI—are grouped into conversation threads that include message history, customer context, and resolution status.
+
+**Key ideas:**
+- Threads are continuous and support async communication.
+- AI and human agents can co-exist in a conversation.
+- Conversations support escalations, tags, notes, and assignments.
+
+---
+
+## 2. Aura AI Agent
+
+Aura is Emplorium’s native AI assistant. It can learn from:
+- Past chat history
+- Articles, documents, and knowledge base content
+- External data fetched via API (data requests)
+- Contextual keywords to perform updates (data updates)
+- Company settings, profile fields, and previous answers
+
+**Highlights:**
+- Responds to customer queries in real-time.
+- Supports fallback logic and hand-off to agents.
+- Can use third-party APIs to fetch or update live data.
+
+---
+
+## 3. Flows & Conditions
+
+Flows define **how actions unfold** in response to triggers or conditions.
+
+- Every flow must start with a **condition** (e.g., page visited, tag added, form submitted).
+- Conditions use AND/OR logic to combine multiple checks.
+- Flows can automate replies, assign agents, update fields, or call APIs.
+
+---
+
+## 4. Triggers
+
+Triggers determine **when a flow starts**. Unlike conditions, which define **what** must be true, triggers define **when** to run the check.
+
+Examples:
+- When a visitor sends a first message
+- When a visitor lands on a pricing page
+- When a user ID is recognized
+
+> Coming soon: Time-based triggers (e.g., after 5 minutes of inactivity)
+
+---
+
+## 5. Profiles & Field Data
+
+Visitors and users in Emplorium are represented by **profiles**:
+- Profiles are built from submitted forms or manual updates by agents.
+- Profiles include field data such as email, company, plan type, etc.
+- Profiles are not persistent across sessions by default (i.e., no tracking across devices).
+
+---
+
+## 6. Tags & Rules
+
+You can categorize conversations and actions using **tags**, which help filter and automate experiences.
+
+Tags can be applied:
+- Manually by agents
+- Automatically via flows
+- Based on AI recognition (intent or topic)
+
+Rules can use these tags to:
+- Auto-assign conversations
+- Route queries
+- Trigger alerts
+
+---
+
+## 7. Forms & Data Capture
+
+Emplorium allows custom **forms** to gather specific information during a conversation:
+- Forms can be triggered manually, by the AI, or via flows
+- Fields within forms map to profile attributes
+- Data captured can be used in subsequent flows or API calls
+
+---
+
+## 8. Data Requests & Data Updates
+
+These are integrations that power Emplorium's interaction with external systems:
+
+- **Data Requests**: Retrieve external data using API GET calls when a keyword or intent is detected
+- **Data Updates**: Send external POST/PUT calls to update third-party systems based on user intent or form submission
+
+> All API logic is configured in Settings → Data Requests / Data Updates.
+
+---
+
+## 9. Escalations & Fallbacks
+
+When Aura can’t resolve an issue:
+- The fallback counter increases (customizable threshold triggers hand-off)
+- A fallback message appears (e.g., "Need help from a human?")
+- A hand-off flow is triggered to route the user to a human agent
+
+---
+
+## Summary
+
+These concepts form the backbone of Emplorium’s live chat automation platform. Mastering them will empower you to:
+- Design smarter engagement journeys
+- Automate repetitive actions
+- Blend AI and human support effectively
+
+> Ready to dive deeper? Continue to [Flow Builder](/features/flow-builder) or [AI Agent Setup](/features/aura-ai-agent).

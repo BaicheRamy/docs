@@ -1,59 +1,109 @@
 ---
+
 title: "Knowledge Base Articles"
-description: "Empower your customers with self-service options by creating a robust Knowledge Base (KB) using Emplorium."
-icon: "books"
----
+description: "Learn how to build and optimize your Knowledge Base inside Emplorium to support instant AI answers and user self-service."
+icon: "book"
+------------
 
-## What is the Knowledge Base?
+## Overview
 
-The Knowledge Base is a self-service help center where you can publish articles, FAQs, and guides that customers can access directly from your widget or website.
+Emplorium's **Knowledge Base** allows you to create a centralized hub of help articles, FAQs, and documentation that can be:
 
-- Reduce ticket volume
-- Improve user satisfaction
-- Enable instant support 24/7
+* Referenced by the Aura AI Agent for instant support responses
+* Indexed by the search box in your live chat widget
+* Organized into categories for user browsing
 
-[insert screenshot_example here - Public-facing knowledge base example]
+Knowledge Articles are essential to power **AI understanding**, reduce agent workload, and improve customer satisfaction.
+
+## How It Works
+
+Knowledge Base content is used by Emplorium in the following ways:
+
+* **AI Training Source**: Aura AI reads all published articles and uses their contents to formulate answers when users ask related questions.
+* **Searchable Widget**: Visitors can search articles from the chat widget interface.
+* **Team Resource**: Agents can link and send articles directly in conversations.
+
+> \[add\_image\_here] - AI referencing Knowledge Base in a live chat
 
 ## Creating Articles
 
-1. Go to **Help Center → Articles**
+To add a new article:
+
+1. Go to **Knowledge Base → Articles**
 2. Click **New Article**
-3. Add:
-   - **Title** and **Content** (Rich text editor)
-   - **Tags** and **Categories** for organization
-   - **Visibility Settings** (Public, Internal, or Hidden)
+3. Fill out the following fields:
 
-[insert screenshot_example here - Article editor UI]
+   * **Title**: Clear, concise summary of the topic.
+   * **Slug**: URL-friendly version of the title (auto-generated or manual).
+   * **Category**: Assign it to a relevant category.
+   * **Body**: Use rich text editor to structure content with headings, lists, images, and links.
+   * **Visibility**: Mark as **Published** to enable use in live widget and AI.
 
-## Organizing the Knowledge Base
+> \[add\_image\_here] - New article creation UI
 
-- Group articles under clear categories (e.g., Getting Started, Billing, Troubleshooting)
-- Reorder articles and categories via drag-and-drop
-- Feature top articles for faster discovery
+### Supported Content Features:
 
-[insert screenshot_example here - Category management view]
+* Text formatting (bold, italic, headings)
+* Lists (ordered, unordered)
+* Images
+* Code blocks
+* Hyperlinks
+* Embedded media (optional)
 
-## Embedding in Chat Widget
+## Article Categories
 
-- Link articles directly inside chat replies
-- Auto-suggest KB articles via Aura AI based on user queries
+To keep your articles organized:
 
-[insert screenshot_example here - Suggested articles in chat view]
+* Navigate to **Knowledge Base → Categories**
+* Click **New Category**
+* Provide a name and optionally an icon or color for UI clarity
 
-## Search & Discoverability
+Categories are displayed in:
 
-- Customers can search articles from the widget or help center
-- Search auto-completes and suggests articles based on keywords
+* Your live widget’s article view
+* Admin dashboard
+* AI’s reference logic
 
-[insert screenshot_example here - Search bar in KB interface]
+## Sync with AI Assistant
 
-## Performance Tracking
+Aura AI automatically ingests all **published articles**. There is no need for manual syncing.
 
-- Track views, feedback, and effectiveness of each article
-- Use insights to update or expand content
+* Any update to an article will reflect in the AI’s responses.
+* You can test AI understanding by interacting with the chat as a visitor.
+* If needed, trigger re-training manually from **Settings → AI Assistant**.
 
-[insert screenshot_example here - Article analytics and feedback panel]
+> \[add\_image\_here] - AI understanding article content during support
+
+## Visibility and Permissions
+
+You can control article access using visibility toggles:
+
+* **Published**: Available to AI and public visitors
+* **Unpublished**: Hidden from both AI and front-end search
+* Articles remain editable regardless of status
+
+> Note: You must publish an article for Aura to use it
+
+## Suggested Use Cases
+
+* Onboarding Guides
+* Troubleshooting FAQs
+* Product Feature Walkthroughs
+* Policy & Billing Explanations
+* External Integrations Setup
+
+## Best Practices
+
+* Keep titles short and clear
+* Add images or screenshots for visual aid
+* Break down steps in numbered lists
+* Link to related articles for navigation
+* Regularly update content to reflect product changes
 
 ---
 
 ### Next Steps
+
+* [Create a New Article](/knowledge-base/articles)
+* [Train Aura AI](/features/aura-ai-agent)
+* [Customize Widget Behavior](/features/chat-widget)

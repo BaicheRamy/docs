@@ -1,59 +1,99 @@
 ---
-title: "Chat Widget"
-description: "Emplorium’s chat widget is the primary touchpoint between your website visitors and your team. It’s fully customizable, multilingual, and built for performance."
-icon: "browser"
----
 
-## Widget Overview
+title: "Chat Widget Overview"
+description: "Discover everything about the Emplorium Chat Widget – how it works, how to customize it, and how it enhances user interactions across platforms."
+icon: "Comment-dots"
+--------------------
 
-- Real-time communication with customers directly from your site
-- Embed rich media, canned responses, or knowledge base links
-- Auto-trigger based on user behavior (via Triggers)
+## What is the Emplorium Chat Widget?
 
-[insert screenshot_example here - Chat widget embedded on a website]
+The Emplorium Chat Widget is an embeddable interface that allows visitors on your website or application to communicate with your team in real time. It provides a seamless bridge between your customers and your support, sales, or AI agent (Aura). Built for flexibility and ease of use, it supports deep customization, AI integration, and multi-device responsiveness.
 
-## Customizing the Widget
+## Key Features
 
-1. Go to **Settings → Widget**
-2. Configure the following options:
-   - **Colors & Branding**: Match your site’s brand
-   - **Welcome Message**: Set default greetings or onboarding text
-   - **Positioning**: Choose left/right side of screen
-   - **Behavior**: Auto-open, sound notifications, animation style
+### 1. **Real-Time Messaging**
 
-[insert screenshot_example here - Widget customization settings]
+* Supports rich text, attachments (images, files), and links.
+* Instant delivery indicators (sent, delivered, seen).
+* Supports multi-language communication (configurable per account).
 
-## Multilingual Support
+### 2. **AI-Powered Assistance (Aura AI)**
 
-- Add translations for supported languages
-- Automatically detect visitor language or let them choose manually
+* AI agent can respond autonomously to user queries.
+* Trained via documents, Q\&A, data fields, APIs, and company settings.
+* Auto-detects user intent and performs actions (like sending data requests or updates).
+* Supports fallback and escalation to live agents.
 
-[insert screenshot_example here - Language switcher in widget settings]
+### 3. **Customizable Design**
 
-## Smart Suggestions & Search
+* Modify widget colors, welcome messages, language, default agent avatar, and widget position.
+* Display options for mobile vs. desktop.
+* Light and dark mode compatibility.
 
-- Suggest knowledge base articles within the widget
-- Provide quick links to FAQs and account help
-- Powered by Aura AI or custom triggers
+> \[add\_image\_here] - Widget customization interface preview
 
-[insert screenshot_example here - Auto-suggested articles in chat window]
+### 4. **Availability Handling**
 
-## Installation
+* Custom online/offline messages.
+* Hide or show the widget outside business hours.
+* Option to show away message or redirect to other contact methods.
 
-- Copy your widget embed code from **Settings → Widget**
-- Paste the code before the closing `</body>` tag of your site’s HTML
+### 5. **Chat Forms**
 
-[insert screenshot_example here - Widget embed code snippet]
+* Use pre-chat or mid-conversation forms to capture user details (e.g., name, email, topic).
+* Create forms directly from the widget settings panel.
+* Form responses update the user profile automatically.
 
-## Visibility Rules (Advanced)
+### 6. **Triggered Messages**
 
-- Show/hide the widget based on:
-  - Page URL
-  - Visitor device or location
-  - Logged-in status
+* Launch proactive messages based on user behavior (e.g., time on page, scroll depth, URL visited).
+* Messages can include buttons or redirect actions.
 
-[insert screenshot_example here - Visibility rules configuration]
+> \[add\_image\_here] - Triggered message configuration
+
+### 7. **Multi-Channel Sync**
+
+* Centralized display of messages from different channels (email, website, API chats).
+* User context maintained across conversations.
+
+### 8. **Session Management**
+
+* Conversations persist across sessions if cookies/localStorage is preserved.
+* Optional reset after inactivity period (customizable).
+
+## Installation Options
+
+You can install the chat widget on any major platform or framework:
+
+* Raw HTML (embed script before `</body>` tag)
+* React / Angular / Vue / Next.js via SDK
+* CMS & eCommerce platforms (WordPress, Shopify, Wix, Webflow, Framer)
+
+Visit the [Installation & Integration Guide](/installation/integration) for step-by-step setup.
+
+## How Users See the Widget
+
+* On load, the widget is minimized by default (unless set to open automatically).
+* Branding and first-message appearance is controlled via settings.
+* Users can reply to previous conversations, start a new one, or interact with Aura.
+
+## Use Cases
+
+* **Customer Support**: Offer quick help and resolve issues in real time.
+* **Lead Qualification**: Use forms and AI to identify high-intent visitors.
+* **Onboarding Guidance**: Trigger messages to guide users through your product.
+
+## Best Practices
+
+* Keep the welcome message warm and brief.
+* Enable Aura for 24/7 coverage, especially during non-business hours.
+* Customize form fields to reduce friction.
+* Use triggers smartly—don’t overwhelm visitors.
 
 ---
 
 ### Next Steps
+
+* [Configure Your Widget Settings](/settings/widget)
+* [Create Triggers & Proactive Messages](/features/triggers)
+* [Enable Aura for Smart Replies](/features/aura-ai-agent)

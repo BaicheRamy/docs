@@ -1,58 +1,109 @@
 ---
+
 title: "Triggers"
-description: "Triggers in Emplorium are the foundation of automation. They allow you to define the conditions under which certain actions should be executed automatically."
-icon: "bolt"
+description: "Understand how to use triggers to automate engagement and streamline interactions with visitors in Emplorium."
+icon: "Bolt"
+------------
+
+## What are Triggers?
+
+**Triggers** in Emplorium are conditions that automatically start flows or actions within the live chat environment. They allow you to proactively engage visitors, personalize experiences, and automate repetitive tasks without manual intervention.
+
+Triggers can detect specific visitor behavior, timing, or data input and then launch predefined actions, such as sending a message, starting a flow, or assigning a tag.
+
 ---
 
-## What is a Trigger?
+## Core Concepts
 
-A **Trigger** is an event or condition that initiates a specific automation. It helps you automate actions like sending messages, tagging conversations, routing users, and more.
+### 1. **Trigger Conditions**
 
-[insert screenshot_example here - Trigger creation interface with conditions and actions]
+Every trigger must be tied to at least one condition. Emplorium supports:
 
-## Types of Triggers
+* **Page URL**: Detect if a visitor is on a specific page.
+* **Time on Page**: Trigger after a certain number of seconds.
+* **Referral Source**: Detect the source (e.g., Google, Facebook).
+* **Scroll Depth**: Trigger when a user scrolls a certain %.
+* **Device Type**: Differentiate between mobile, desktop, or tablet.
+* **First-Time vs Returning Visitor**
+* **Chat Inactivity**: Trigger if the visitor has been idle.
+* **Campaign Tag**: Trigger if a visitor has a campaign-specific tag.
+* **Utm Parameters**: Track and trigger based on marketing UTM parameters.
 
-### Event-Based Triggers
+> ✅ You can combine multiple conditions using AND/OR logic.
 
-- When a new message is received
-- When a conversation is closed or resolved
-- When a visitor opens the chat widget
+---
 
-### Attribute-Based Triggers
+### 2. **Trigger Actions**
 
-- User attribute matches (e.g., plan = "Free")
-- Channel type (e.g., WhatsApp or Email)
-- Message content includes specific keywords
+Once a condition is met, you can define what action Emplorium takes. Available actions include:
 
-### Time-Based Triggers
+* **Send a Message**: Display a proactive message to the visitor.
+* **Start a Flow**: Automatically launch a specific automation flow.
+* **Assign a Tag**: Tag the visitor for future targeting.
+* **Open Form**: Prompt a specific form for lead capture or feedback.
+* **Route to Team**: Assign the conversation to a particular team or agent group.
+* **Update Profile**: Dynamically modify visitor data fields.
 
-- Trigger if no response in X minutes
-- Trigger after a delay from message received or action taken
-
-[insert screenshot_example here - Example of time-delay trigger]
-
-## Setting Up a Trigger
-
-1. Go to **Settings → Automation**
-2. Click **New Rule**
-3. Choose a **Trigger Event**
-4. Add optional **Conditions** to filter when the rule applies
-5. Define one or more **Actions** (e.g., assign to team, send message, tag conversation)
-6. Save and activate the trigger
-
-[insert screenshot_example here - Rule setup wizard with trigger, conditions, and action]
-
-## Common Use Cases
-
-- Auto-assign conversations based on language or channel
-- Send welcome or out-of-office messages
-- Tag VIP users automatically
-- Escalate if no agent responds within X minutes
+---
 
 ## Managing Triggers
 
-- View all triggers in the **Automation** panel
-- Enable, disable, or edit existing rules
-- Use test mode to simulate how a trigger will behave
+Triggers are managed from **Settings → Triggers**. Each trigger has:
 
-[insert screenshot_example here - Automation rules dashboard]
+* **Name**: Internal title for easy reference.
+* **Status Toggle**: Enable or disable individual triggers.
+* **Condition Builder**: A visual tool to combine conditions.
+* **Action Selector**: Dropdown to select the desired action.
+* **Preview/Test Tool**: See the trigger in action before publishing.
+
+> \[add\_image\_here] - Trigger creation and testing UI
+
+---
+
+## Best Practices
+
+* **Keep Conditions Simple**: Use the fewest necessary conditions to avoid complexity.
+* **Preview Before Launching**: Always test your triggers to make sure they fire correctly.
+* **Use Tags for Segmentation**: Tag visitors based on trigger logic for easier follow-up.
+* **Monitor Engagement Metrics**: Track which triggers convert and which don’t.
+
+---
+
+## Use Cases
+
+### Abandonment Recovery
+
+If a visitor lingers on the checkout page for 45 seconds without interaction:
+
+* **Trigger**: Page URL + Time on Page
+* **Action**: Send message “Need help checking out?”
+
+### Content Promotion
+
+When a visitor arrives from a newsletter campaign:
+
+* **Trigger**: Referral Source = Mailchimp + UTM = newsletter\_june
+* **Action**: Launch a custom flow or welcome message.
+
+### Lead Capture on Blog
+
+If a visitor scrolls 75% of a blog post:
+
+* **Trigger**: Page URL contains "/blog" + Scroll Depth 75%
+* **Action**: Open form to capture email.
+
+---
+
+## Trigger Limits & Roadmap
+
+* **Multiple Triggers per Flow**: Supported. A single flow can be activated by several different triggers.
+* **Time-Based Triggers**: Not supported yet. Planned in roadmap.
+* **Trigger Analytics**: Basic analytics available. Enhanced reporting coming soon.
+
+---
+
+## Next Steps
+
+* [Build Your First Trigger](/settings/triggers)
+* [Connect Triggers with Automation Flows](/features/automation-flows)
+* [Analyze Visitor Behavior](/analytics/overview)

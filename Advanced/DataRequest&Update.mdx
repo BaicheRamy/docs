@@ -1,0 +1,86 @@
+---
+title: "Data Requests & Updates"
+description: "Configure Emplorium to fetch or update third-party data directly through AI-driven interactions."
+icon: "server"
+--------------
+
+Emplorium enables powerful integrations with external APIs using **Data Requests** and **Data Updates**, giving your AI assistant (Aura AI) the ability to fetch and send data in real-time during conversations. This section outlines how to set up and manage both features effectively.
+
+---
+
+## What Are Data Requests?
+
+**Data Requests** allow Aura AI to retrieve external data when triggered by specific keywords or intents. This can include pulling user order statuses, account balances, shipment tracking info, or any other API-accessible resource.
+
+### Example Use Cases:
+
+* "Where is my order?" → Fetch tracking status from shipping API.
+* "How many points do I have?" → Fetch loyalty balance from CRM.
+
+### How It Works:
+
+* You define an API endpoint in your settings.
+* Associate it with one or more trigger keywords.
+* When Aura AI detects a matching intent, it automatically sends a GET request and uses the response to craft its reply.
+
+> \[add\_image\_here] – Data Request configuration panel
+
+---
+
+## What Are Data Updates?
+
+**Data Updates** let Aura AI send data to external systems, effectively enabling actions like creating tickets, updating records, or changing a subscription status—all from within the chat.
+
+### Example Use Cases:
+
+* "Cancel my subscription" → POST request to cancel endpoint.
+* "Update my phone number" → PATCH request to user profile API.
+
+### How It Works:
+
+* You configure the API endpoint and method (POST, PUT, PATCH, etc.).
+* Map the fields that should be sent dynamically from chat input.
+* Aura AI detects trigger phrases and performs the action with confirmation.
+
+> \[add\_image\_here] – Data Update mapping screen
+
+---
+
+## Configuration Steps
+
+1. **Go to Settings → Data Requests / Data Updates**
+2. **Click “Add New”** and fill in:
+
+   * Endpoint URL
+   * Method (GET for requests, POST/PUT for updates)
+   * Authorization headers (if required)
+   * Dynamic variables (e.g., `{{user_email}}`, `{{order_id}}`)
+3. **Set Trigger Keywords** that will prompt Aura AI to use the connection
+4. **Test the Connection** before going live
+
+> \[add\_image\_here] – Trigger keyword assignment UI
+
+---
+
+## Best Practices
+
+* Keep endpoints scoped to essential functions to minimize exposure.
+* Use secure tokens or OAuth where possible.
+* Limit data output to what’s necessary for clarity and compliance.
+* Test with various phrasing to ensure Aura AI picks up on user intent effectively.
+
+---
+
+## Coming Soon
+
+* **Response formatting helpers** for JSON parsing
+* **Conditional logic** for fallback replies
+* **Support for GraphQL and file upload endpoints**
+
+---
+
+### Next Steps
+
+* [Configure a Data Request](/settings/data-requests)
+* [Set up a Data Update](/settings/data-updates)
+* [Train Aura AI on intent patterns](/features/aura-ai-agent)

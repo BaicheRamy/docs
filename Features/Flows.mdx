@@ -1,52 +1,139 @@
 ---
-title: "Automation & Flows"
-description: "Emplorium’s automation features help you streamline repetitive tasks, improve response times, and deliver proactive support."
-icon: "chart-diagram"
----
 
-## What You Can Automate
+title: "Flows"
+description: "Learn how Flows power automated, condition-based logic inside Emplorium to streamline customer interactions."
+icon: "hashnode"
+--------------------
 
-- Auto-assign conversations to the right agent or team
-- Send automated welcome or away messages
-- Trigger workflows based on user behavior or message content
-- Escalate or close conversations based on rules
+## What Are Flows?
 
-## Getting Started with Automation
+Flows are Emplorium's visual automation builder that allow you to define what should happen when specific conditions are met. Flows work alongside **Triggers** to provide powerful, no-code automation of chat responses, actions, and dynamic routing.
 
-1. Go to **Settings → Automation**
-2. Click **New Rule**
-3. Define:
-   - **Trigger**: What event starts the automation (e.g., new message received)
-   - **Conditions**: Filters to narrow scope (e.g., if channel is WhatsApp)
-   - **Actions**: What happens (e.g., assign to team, send message, tag conversation)
+Each Flow begins with a **starting condition** (like a Trigger firing), then follows a visual path of **steps** that define the AI or platform's behavior, such as replying, updating data, asking a question, or handing off to a human agent.
 
-[insert screenshot_example here - Create new automation rule UI]
-
-## Common Use Cases
-
-- **Welcome Messages**: Send an automated greeting when someone opens the chat widget.
-- **Offline Routing**: If all agents are offline, notify the user and assign to a follow-up queue.
-- **Priority Tagging**: Automatically tag high-priority customers based on attributes.
-- **Agent Escalation**: Reassign conversations if not responded to in X minutes.
-
-[insert screenshot_example here - Example of priority tagging rule]
-
-## Workflow Templates
-
-Emplorium offers pre-built templates to get you started:
-
-- First Response Time SLAs
-- VIP Customer Handling
-- Multilingual Routing
-
-[insert screenshot_example here - Automation templates library]
-
-## Tips for Effective Automation
-
-- Start simple and iterate.
-- Always test before enabling live.
-- Use tags and conditions to keep workflows precise.
+> Flows are always tied to a condition and can branch into multiple outcomes depending on logic paths.
 
 ---
 
-### Next Steps
+## Key Flow Components
+
+### 1. **Start Condition**
+
+Every flow must begin with a condition. This can be:
+
+* A Trigger event (e.g., "User says something containing X")
+* A user visiting a specific page
+* A form submission
+* A fallback (e.g., when the AI can't answer)
+
+### 2. **Actions (Steps)**
+
+Once the flow starts, it can execute any of the following:
+
+* **Send Message**: Text, rich reply, image, or quick reply options.
+* **Ask a Question**: Wait for a user reply to proceed.
+* **Update Field**: Update a profile field based on conversation data.
+* **Call Data Request**: Retrieve third-party data via API based on user input.
+* **Send Data Update**: Push user-provided data to an external system.
+* **Branch Logic**: Create conditional branches using AND/OR operators.
+* **Tag Chat**: Apply labels based on user behavior or flow outcome.
+* **Escalate to Agent**: Route to a human when certain conditions are met.
+* **End Flow**: Cleanly stop the flow once an outcome is met.
+
+### 3. **Branching**
+
+Use IF/ELSE and AND/OR logic to branch behavior within the flow based on:
+
+* User input
+* Tags applied
+* Field values
+* Previous responses
+
+### 4. **AI Response Integration**
+
+Flows can contain steps that use Aura AI to respond dynamically:
+
+* Ask AI to rephrase
+* Provide a smart reply suggestion
+* Let AI attempt a fallback before escalating
+
+---
+
+## Example Use Cases
+
+* **Lead Qualification Flow**:
+
+  * Trigger: Page visit = /pricing
+  * Ask name, company size
+  * Qualify lead
+  * Route to sales agent if enterprise
+
+* **Fallback Escalation Flow**:
+
+  * Trigger: AI fallback tag hit 3 times
+  * Show buttons: "Did this help?" / "Talk to a human"
+  * If user selects human, escalate chat
+
+* **Booking Flow**:
+
+  * Trigger: Keyword = "demo"
+  * Ask availability
+  * Call data update API to book meeting
+
+---
+
+## Flow Builder UX
+
+The Flow Builder UI is:
+
+* **Visual & Drag-and-Drop**
+* **Supports nesting & branches**
+* **Shows real-time test cases**
+* **Lets you preview user paths**
+* **Each flow clearly shows entry condition + actions + exits**
+
+You can:
+
+* Duplicate flows
+* Import/export logic
+* Preview or test with mock data
+* Set flow priority if multiple flows share a trigger
+
+> \[add\_image\_here] - Example of drag-and-drop logic with branching
+
+---
+
+## Best Practices
+
+* Use **clear entry conditions** to avoid unintended triggering.
+* Always add **end steps** or escalation to avoid loops.
+* Test **all branches** for edge cases.
+* Use **tags and profile updates** to track behavior inside flows.
+
+---
+
+## Flow Management
+
+* Flows are stored in the **Automation > Flows** section.
+* You can **enable/disable** individual flows.
+* Flows can be tied to multiple **Triggers**.
+* You can **prioritize** flows when more than one could apply.
+
+---
+
+## Roadmap Insights
+
+Coming soon to Flows:
+
+* Time delays and wait steps (e.g., "Wait 5 min before follow-up")
+* Variables and templating inside replies
+* Conditional looping and retry logic
+* Previewing AI decisions inside a flow test
+
+---
+
+## Next Steps
+
+* [View Trigger Reference](/features/triggers)
+* [Learn about Aura AI Replies](/features/aura-ai-agent)
+* [Explore Data Requests](/features/integrations-and-extensions)

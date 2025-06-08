@@ -1,55 +1,85 @@
 ---
-title: "Customer Profiles"
-description: "Emplorium provides detailed customer profiles that help you deliver personalized support and track user activity over time."
-icon: "user"
+title: "Profiles"
+description: "Understand how Emplorium uses visitor profiles to track and leverage customer data during live chat interactions."
+icon: "User"
 ---
 
-## What is a Customer Profile?
+## What are Profiles?
 
-A customer profile is a centralized view of a user's information and history. It includes key attributes, conversation records, and custom data points.
+Profiles in Emplorium represent the individual visitors interacting with your chat widget. Each profile is dynamically created during a session and populated with available data from conversations, forms, and API updates. Profiles allow agents and Aura AI to deliver personalized, contextual experiences.
 
-- Understand who you're talking to
-- Personalize conversations in real-time
-- Track interaction history and preferences
+---
 
-[insert screenshot_example here - Full customer profile panel in inbox]
+## Key Concepts
 
-## Profile Fields
+### 1. **Session-Based Identification**
+- Profiles are **not persistent across sessions**. If the same visitor returns via a different browser, device, or clears cookies, a new profile will be generated.
+- No cross-device or long-term re-identification is performed.
 
-Each profile includes:
+### 2. **Data Sources**
+- **Form Submissions**: Profile fields are auto-filled when users submit forms during chat interactions.
+- **Manual Edits**: Agents can manually edit or add fields directly in the profile panel.
+- **API Updates**: Data received from external APIs via Data Requests or Data Updates can also enrich the profile.
 
-- **Basic Info**: Name, email, phone number, location
-- **Contact Activity**: Last seen, first seen, session count
-- **Custom Attributes**: Add tags like plan type, language, user role, or subscription status
-- **Conversation History**: View all past interactions across all channels
+### 3. **Field Customization**
+- Admins can configure custom profile fields (text, number, date, dropdown) in **Settings → Profiles**.
+- These fields can be mapped to form inputs or external data.
 
-[insert screenshot_example here - Custom attribute editor or tag view]
+---
 
-## Updating Profiles
+## Profile Components
 
-- Edit fields manually from the inbox
-- Auto-update based on integrations or workflows
-- Use API to push or pull profile updates
+### Basic Info Panel
+- Name, Email, Phone, Location (if available from form or IP).
+- Metadata like browser type, operating system, and first seen timestamp.
 
-[insert screenshot_example here - Edit profile modal]
+### Custom Fields
+- Configurable fields per your business needs (e.g. plan type, region, loyalty score).
+- Used in Flows, Triggers, or personalizing AI responses.
 
-## Segmentation with Attributes
+### Conversation History
+- Linked to the profile for real-time agent and AI reference.
+- Helps in providing continuity during ongoing chats.
 
-Leverage profile attributes for:
+---
 
-- **Automation Triggers**: e.g., send message if plan = free
-- **Audience Filtering**: for campaigns or reporting
-- **Routing Logic**: assign to team based on language or tier
+## Profile Editing
 
-[insert screenshot_example here - Filtering interface based on attributes]
+### By Agents:
+- Agents can edit any profile field directly from the right-side profile panel during a chat.
+- Useful for correcting or enhancing missing information on-the-fly.
 
-## Notes & Tags
+### By AI:
+- Aura AI can suggest updates or automatically store form-submitted info to profiles.
+- Only updates fields explicitly configured in the profile schema.
 
-- Add internal notes for team context
-- Tag profiles for segmentation or prioritization
+---
 
-[insert screenshot_example here - Notes field with example comments]
+## Use Cases
+
+- **Lead Qualification**: Enrich profiles with form data or API checks (e.g. CRM match).
+- **AI Personalization**: Aura references profile values when answering (e.g. "Hi John, your plan is Premium.")
+- **Routing & Automation**: Trigger Flows based on profile attributes (e.g. VIP tier, location).
+
+---
+
+## Privacy Considerations
+
+- **Temporary Storage**: Profiles are short-lived and reset with new sessions.
+- **Manual Deletion**: Agents can clear profile data manually if requested by the user.
+- **No Persistent Tracking**: The system avoids any long-term tracking in compliance with privacy regulations.
+
+---
+
+## Future Improvements (Planned)
+
+- **Persistent Profiles**: Ability to link returning users based on login or CRM match.
+- **Profile Export/Import**: Admins will be able to export profile data for analysis or import predefined profiles.
+- **Profile Segments**: Create segments based on profile attributes for tailored Flows and AI behavior.
 
 ---
 
 ### Next Steps
+- [Set Up Custom Fields →](/settings/profile-fields)
+- [Connect API to Enrich Profiles →](/features/integrations-and-extensions)
+- [Use Profiles in Triggers & Flows →](/features/triggers)

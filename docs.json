@@ -26,30 +26,29 @@
             "pages": [
               "Overview/DashboardWalkthrough",
               "Overview/KeyConcepts",
-              "Overview/User&TeamManagement"
+              "Overview/UserTeamManagement"
             ]
           },
           {
             "group": "Features Guide",
             "pages": [
-              "Features/Inbox&Messaging",
+              "Features/InboxMessaging",
               "Features/ChatWidget",
               "Features/Triggers",
               "Features/Flows",
               "Features/AuraAi",
               "Features/Profiles",
               "Features/KBAs",
-              "Features/Integrations"
+              "Features/Integrations",
+              "Features/VirtualVisitor"
             ]
           },
           {
-            "group": "Troubleshooting & FAQs",
+            "group": "Advanced Topics",
             "pages": [
-              "FAQS/CommonSetupIssues",
-              "Features/ChatWidgetProblems",
-              "Features/MessageDeliveryIssues",
-              "Features/API&IntegrationProblems",
-              "Features/GeneralFAQs"
+              "Advanced/AdvancedConfiguration",
+              "Advanced/SecurityPermissions",
+              "Advanced/DataRequest&Update"
             ]
           }
         ]

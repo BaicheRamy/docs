@@ -1,67 +1,228 @@
 ---
-title: "Installation & Integration"
-description: "Integrating Emplorium with your existing systems and platforms is straightforward. Follow this guide to set up integrations seamlessly."
+title: "Full Integration Guide"
+description: "Explore all available methods to install and integrate the Emplorium chat widget with your site or app. This guide covers snippet-based installs, framework SDKs, and platform-specific setups in detail."
 icon: "Puzzle-piece"
 ---
 
-## Widget Installation
+## Chat Widget Integration
 
-To integrate the Emplorium widget on your website:
+Choose how to install the Emplorium widget based on the technology you're using. All methods load the widget script and report the installation status using your unique account ID.
 
-1. **Copy Widget Code**:
-   - Go to **Settings → Widget**.
-   - Copy the provided widget embed code.
-2. **Add to Your Website**:
-   - Paste the copied code into your website’s HTML, right before the closing `</body>` tag.
+### Snippet Code (HTML)
 
-[insert screenshot_example here - Widget embed code]
+```html
+<script type="text/JavaScript">
+  ((function(){
+    var loadWidget = function(){
+      var script = "https://widget-service-dev.emplorium.io/acc-9700d/init.js";
+      var x = document.createElement('script');
+      var sx = document.getElementsByTagName('script')[0];
+      x.src = script; x.async = true;
+      sx.parentNode.insertBefore(x, sx);
 
-## API Integration
-
-Emplorium offers powerful APIs to extend functionality and integrate with your custom solutions.
-
-1. **Generate API Keys**:
-   - Navigate to **Settings → API Keys**.
-   - Create a new API key for secure access.
-
-[insert screenshot_example here - API key generation]
-
-2. **Documentation**:
-   - Access detailed API documentation for endpoints, requests, and responses.
-
-## Third-party Integrations
-
-Emplorium seamlessly integrates with various third-party platforms to streamline your workflow:
-
-- **CRM Systems** (e.g., Salesforce, HubSpot)
-- **Marketing Platforms** (e.g., Mailchimp, ActiveCampaign)
-- **Communication Tools** (e.g., Slack, Microsoft Teams)
-- **Automation Tools** (e.g., Zapier)
-
-To integrate third-party services:
-
-- Go to **Settings → Integrations**.
-- Select your desired service and follow the prompts to authenticate and set it up.
-
-[insert screenshot_example here - Integration settings page]
-
-## Webhooks Setup
-
-Webhooks let you automate workflows by sending real-time notifications to external systems.
-
-- Navigate to **Settings → Webhooks**.
-- Click **Add Webhook**.
-- Specify the URL to receive notifications and select the events that trigger webhook notifications.
-
-[insert screenshot_example here - Webhook configuration]
-
-## SDK Integration (Optional)
-
-Emplorium provides SDKs to streamline the integration process for mobile and desktop applications.
-
-- Visit our SDKs & Libraries page for detailed guides.
-- Follow provided instructions to integrate and configure.
+      fetch("https://auth-service-dev.emplorium.io/widget-init-status", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ accountID: "9700d" })
+      }).catch(function(error) {
+        console.error('Widget installation status update failed:', error);
+      });
+    }
+    if(document.readyState === "complete") {
+      loadWidget();
+    } else if (window.addEventListener){
+      window.addEventListener('load', loadWidget, false);
+    } else if (window.attachEvent){
+      window.attachEvent("onload", loadWidget);
+    }
+  })())
+</script>
+```
 
 ---
 
-### Next Steps
+## React Integration
+
+### Option A: Embed Script in `public/index.html`
+
+1. Open your React project.
+2. Edit `public/index.html` and add the snippet above just before `</head>`.
+3. Save and run your app (`npm start`).
+4. Confirm widget loads at `http://localhost:3000`.
+
+### Option B: Install via NPM
+
+```bash
+npm install emplorium
+```
+
+Use in your component:
+
+```jsx
+import { EmploriumWidget } from 'emplorium';
+
+function App() {
+  return (
+    <div>
+      <h1>Your React App</h1>
+      <EmploriumWidget accountID="acc-9700d" />
+    </div>
+  );
+}
+export default App;
+```
+
+---
+
+## Angular Integration
+
+### Option A: Script Embed
+
+1. Modify `src/index.html`, insert widget snippet before `</head>`.
+2. Run app with Angular CLI: `ng serve`.
+3. Verify widget at `http://localhost:4200`.
+
+### Option B: SDK Installation
+
+```bash
+npm install emplorium-angular
+```
+
+#### Usage:
+
+```ts
+import { EmploriumWidgetComponent } from 'emplorium-angular';
+```
+
+```html
+<emplorium-widget [accountID]="'acc-9700d'"></emplorium-widget>
+```
+
+#### Optional: `ngsw-config.json` Example
+
+```json
+{
+  "assetGroups": [
+    {
+      "name": "widget-assets",
+      "installMode": "lazy",
+      "resources": {
+        "urls": ["https://widget-service-dev.emplorium.io/*"]
+      }
+    }
+  ]
+}
+```
+
+---
+
+## Vue.js Integration
+
+### Option A: Embed Script
+
+1. Insert the widget script in `public/index.html` before `</head>`.
+2. Run Vue CLI app: `npm run serve`.
+3. Verify widget loads at `http://localhost:8080`.
+
+### Option B: Install SDK
+
+```bash
+npm install emplorium-vue
+```
+
+#### Register in `main.js`
+
+```js
+import { createApp } from 'vue';
+import App from './App.vue';
+import { EmploriumWidget } from 'emplorium-vue';
+
+const app = createApp(App);
+app.component('EmploriumWidget', EmploriumWidget);
+app.mount('#app');
+```
+
+#### Usage in template:
+
+```vue
+<template>
+  <EmploriumWidget accountID="acc-9700d" />
+</template>
+```
+
+---
+
+## Next.js Integration
+
+### Option A: Script File
+
+1. Create `public/EmploriumWidget.js` and paste widget script inside.
+2. In your `_app.js` or layout:
+
+```jsx
+<Script src="/EmploriumWidget.js" strategy="beforeInteractive" />
+```
+
+### Option B: SDK Installation
+
+```bash
+npm install emplorium
+```
+
+```jsx
+import { EmploriumWidget } from 'emplorium';
+
+function App() {
+  return <EmploriumWidget accountID="acc-9700d" />;
+}
+```
+
+---
+
+## CMS & No-Code Platforms
+
+### WordPress
+
+1. Install plugin: *Insert Headers and Footers*.
+2. Go to **Settings → Insert Headers and Footers**.
+3. Paste widget script in the header section.
+4. Save and reload site.
+
+### Shopify
+
+1. Navigate to **Online Store → Themes → Edit Code**.
+2. Edit `theme.liquid`.
+3. Insert widget script before `</head>`.
+
+### Webflow
+
+1. Go to **Project Settings → Custom Code**.
+2. Add the widget script to **Head Code**.
+3. Save and publish your site.
+
+### Wix
+
+1. Edit site → **Add → Embed Code → Embed a Widget**.
+2. Paste the widget script.
+3. Adjust position and publish.
+
+### Framer
+
+1. Open Framer and go to the **Code** tab.
+2. Add the widget script as a custom block.
+3. Save and publish your project.
+
+---
+
+### Final Checklist
+
+- ✅ Script is placed before `</head>` or `</body>` depending on setup
+- ✅ Account ID is set correctly in the snippet (`acc-9700d`)
+- ✅ `fetch` status call is not blocked
+- ✅ No console errors after loading the page
+
+---
+
+### Need Help?
+
+If you're stuck, [contact support](https://dev.emplorium.io/help-docs) or ask your teammates to help finish setup.
