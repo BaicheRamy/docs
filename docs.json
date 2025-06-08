@@ -3,9 +3,9 @@
   "theme": "almond",
   "name": "Emplorium Documentation",
   "colors": {
-    "primary": "#FFFFFF",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#645DFF",
+    "light": "#645DFF",
+    "dark": "#645DFF"
   },
   "favicon": "/favicon.svg",
   "navigation": {
