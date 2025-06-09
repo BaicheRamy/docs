@@ -1,61 +1,123 @@
 ---
-title: "Integrations & Extensions"
-description: "Emplorium supports a wide range of integrations to help you streamline workflows, sync data, and automate tasks across your ecosystem."
-icon: "gem"
+
+title: "Integrations"
+description: "Learn how Emplorium connects with third-party tools and APIs to help you streamline workflows, automate tasks, and access external data directly in your chat experience."
+icon: "book"
 ---
 
-## Popular Integrations
+## Overview
 
-### CRM Platforms
+Emplorium offers powerful integration capabilities to extend the platform's functionality and align it with your existing tools. Whether you're connecting to a CRM, marketing tool, automation service, or using custom APIs, Emplorium provides a seamless integration layer across multiple channels.
 
-- **HubSpot**, **Salesforce**, **Pipedrive**
-- Sync conversations, contacts, and activity logs
+There are three main types of integrations within Emplorium:
 
-### Marketing Tools
+* **Third-party integrations** (e.g., HubSpot, Mailchimp, Slack)
+* **Custom API-based integrations** (Data Requests and Data Updates)
+* **Webhooks for event-driven workflows**
 
-- **Mailchimp**, **ActiveCampaign**, **Klaviyo**
-- Align campaigns and contact lists for seamless messaging
 
-### Productivity & Collaboration
+## 1. Third-party Integrations
 
-- **Slack**, **Microsoft Teams**, **Notion**
-- Receive notifications, assign tasks, and share updates in real time
+Emplorium supports direct connections with popular business tools and platforms, including:
 
-### Automation Services
+* **CRM Tools**: Salesforce, HubSpot
+* **Marketing Platforms**: Mailchimp, ActiveCampaign
+* **Communication Channels**: Slack, Microsoft Teams
+* **Automation Tools**: Zapier, Make (Integromat)
 
-- **Zapier**, **Make (Integromat)**
-- Connect Emplorium with 5,000\+ apps via no-code workflows
-
-### E-commerce Platforms (Coming Soon)
-
-- **Shopify**, **WooCommerce**, **BigCommerce**
-- Automate order updates, customer support, and recommendations
-
-[insert screenshot_example here - Integration marketplace UI]
-
-## Setting Up an Integration
+### How to Set Up:
 
 1. Go to **Settings → Integrations**
-2. Browse or search for the desired service
-3. Click **Connect**, authenticate, and configure options
+2. Choose your desired tool from the available list
+3. Authenticate using OAuth or API key (based on provider)
+4. Map fields or event triggers if required
+5. Save and activate the integration
 
-[insert screenshot_example here - OAuth or API setup modal]
+> \[add\_image\_here] - Example: Integration setup UI
 
-## Webhooks & Custom Integrations
+Once integrated, these platforms can:
 
-For more flexibility:
+* Share contact data
+* Trigger messages based on external campaign actions
+* Notify internal channels of user activity
+* Automate data logging and CRM updates
 
-- Navigate to **Settings → Webhooks**
-- Add a new webhook and define event triggers (e.g., conversation created, tag added)
-- Send data to your server or third-party service
 
-[insert screenshot_example here - Webhook configuration form]
 
-## Developer Tools
+## 2. API-Based Integrations
 
-- Access our API Reference to build deep integrations
-- Use SDKs for advanced workflows or internal tool extensions
+This is one of Emplorium's most flexible and powerful integration mechanisms.
+
+### a. **Data Requests**
+
+Allow Aura AI to query external data based on specific user intents or keywords.
+
+* Use case: Retrieve order status, fetch CRM record, etc.
+* Configured via **Settings → Data Requests**
+* Requires endpoint URL, method, and optional headers/params
+
+Example:
+
+* Trigger phrase: “Check my delivery”
+* API endpoint: `GET /orders/:orderId`
+* Result is shown in the live chat thread as a formatted AI response
+
+### b. **Data Updates**
+
+Enable Aura AI to send data or trigger changes in external systems via keyword-based logic.
+
+* Use case: Update ticket status, submit form data, etc.
+* Configured via **Settings → Data Updates**
+* Define the endpoint, method (POST/PUT), and payload structure
+
+> \[add\_image\_here] - Data request/update configuration interface
+
+These integrations are AI-aware, meaning Aura can dynamically choose which API to call based on detected intent.
+
+
+
+## 3. Webhooks
+
+Webhooks allow Emplorium to push real-time events to external systems.
+
+### Example Events:
+
+* New chat message
+* AI fallback trigger
+* Form submission
+* User rated conversation
+
+### Setup Steps:
+
+1. Navigate to **Settings → Webhooks**
+2. Click **Add Webhook**
+3. Define the receiving endpoint URL
+4. Select which events should trigger the webhook
+5. Save
+
+Payloads are sent as `application/json` and can be used to:
+
+* Trigger Zapier automations
+* Notify backend systems
+* Log events to analytics
+
+
+
+## Integration Use Cases
+
+Here are some practical ways integrations amplify Emplorium’s utility:
+
+| Scenario                      | Integration Type | Example                               |
+| ----------------------------- | ---------------- | ------------------------------------- |
+| AI retrieves user CRM profile | Data Request     | Fetch from HubSpot API                |
+| AI submits support ticket     | Data Update      | Send to Helpdesk endpoint             |
+| Notify Slack on new message   | Webhook          | Push notification to #support channel |
+| Trigger email campaign        | Third-party      | Sync with Mailchimp tag               |
 
 ---
 
-### Next Steps
+## Next Steps
+
+* [Connect Integrations →](/settings/integrations)
+* [Create API Keys →](/settings/api-keys)
+* [Enable Aura AI to use APIs →](/features/aura-ai-agent)
