@@ -80,14 +80,6 @@
     "dark": "/logo/Light.svg"
   },
   
- "contextual": {
-   "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude"
-   ]
- },
   "navbar": {
     "links": [
       {
