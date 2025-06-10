@@ -82,13 +82,16 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@emplorium.com"
+        "type": "button",
+        "label": "back to website",
+        "href": "https://emplorium.io",
+        "icon": "arrow-left",
+        "iconPosition": "left"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Open App",
+      "label": "Open Dashboard",
       "href": "https://app.emplorium.io"
     }
   },
