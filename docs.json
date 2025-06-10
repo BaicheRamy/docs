@@ -80,6 +80,11 @@
     "dark": "/logo/Light.svg"
   },
   
+ "contextual": {
+   "options": [
+     "copy"
+   ]
+ },
   "navbar": {
     "links": [
       {
