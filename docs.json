@@ -7,7 +7,7 @@
     "light": "#645DFF",
     "dark": "#645DFF"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "images/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -83,20 +83,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@emplorium.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "https://app.emplorium.io"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/emplorium",
+      "github": "https://github.com/Emplorium",
+      "linkedin": "https://linkedin.com/company/emplorium"
     }
   }
 }
