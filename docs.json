@@ -46,7 +46,7 @@
           {
             "group": "Advanced Topics",
             "pages": [
-              "Advanced/AdvancedConfiguration",
+              "Advanced/Config",
               "Advanced/SecurityPermissions",
               "Advanced/DataRequest&Update"
             ]
