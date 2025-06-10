@@ -1,5 +1,6 @@
-#assistant-entry,
-:contentReference[oaicite:13]{index=13}
-:contentReference[oaicite:14]{index=14}
-  :contentReference[oaicite:15]{index=15}
+button#assistant-entry,
+[aria-label="Ask AI"],
+.mint-chat-widget,
+.mint-ai-assistant {
+  display: none !important;
 }
