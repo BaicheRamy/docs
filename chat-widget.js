@@ -28,25 +28,20 @@
   })())
 
 
+// hideAssistant.js
+document.addEventListener('DOMContentLoaded', () => {
+  // List of selectors to hide/remove
+  const selectors = [
+    'button#assistant-entry',           // chat launcher button
+    '.mint-ai-assistant',              // assistant container
+    '.mint-chat-widget'                // chat UI pane
+  ];
 
-    // This script is used to load a chat widget from a specified URL.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const supportLink = document.querySelector('a[href="https://support.placeholder"]');
-  
-  if (supportLink) {
-    supportLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      toggleSupportWidget();
-    });
-  }
-
-  function toggleSupportWidget() {
-    const widget = document.getElementById('emplorium-iframe-chat');
-    if (widget) {
-      widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+  selectors.forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) {
+      el.style.setProperty('display', 'none', 'important');
+      // or el.remove();
     }
-  }
+  });
 });
-
-  
