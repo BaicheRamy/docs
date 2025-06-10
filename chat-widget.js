@@ -28,20 +28,25 @@
   })())
 
 
-// hideAssistant.js
-document.addEventListener('DOMContentLoaded', () => {
-  // List of selectors to hide/remove
-  const selectors = [
-    'button#assistant-entry',           // chat launcher button
-    '.mint-ai-assistant',              // assistant container
-    '.mint-chat-widget'                // chat UI pane
-  ];
+// docs/hideAssistant.js
+document.addEventListener("DOMContentLoaded", () => {
+  function removeAssistant() {
+    const selectors = [
+      '#assistant-entry',         // chat launcher button
+      'button#assistant-entry',   // alternative selector
+      '.mint-ai-assistant',       // assistant wrapper
+      '.mint-chat-widget'         // chat pane
+    ];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.remove());
+    });
+  }
+  
+  // Remove on page load
+  removeAssistant();
 
-  selectors.forEach(sel => {
-    const el = document.querySelector(sel);
-    if (el) {
-      el.style.setProperty('display', 'none', 'important');
-      // or el.remove();
-    }
-  });
+  // Also observe for elements added later (e.g., dynamic mounts)
+  const observer = new MutationObserver(removeAssistant);
+  observer.observe(document.body, { childList: true, subtree: true });
 });
+
