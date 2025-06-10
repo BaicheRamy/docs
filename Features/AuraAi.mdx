@@ -1,39 +1,24 @@
 ---
-
 title: "Aura AI"
 description: "Learn how Aura AI transforms customer conversations using contextual intelligence, external data sources, and smart fallback logic."
 icon: "Sparkles"
--------------
-
-## Overview
-
-Aura AI is Emplorium’s intelligent assistant designed to automate and enhance conversations with your website visitors. It learns from various data sources, understands context, handles queries in real-time, and gracefully escalates to human agents when needed.
-
-## What Makes Aura AI Powerful
-
-* **Context-Aware Responses**: Aura AI uses session context, conversation history, and configured knowledge to generate smart replies.
-* **Multi-Source Learning**: Trains on your documents, articles, links, chat history, form values, company settings, and both external API data requests and data updates.
-* **Keyword Matching + Intent Detection**: Recognizes user intents via keyword triggers or detected meaning.
-* **Smart Escalation Rules**: Supports fallback tagging, human hand-off, and unanswered question tracking.
-* **Customizable Behaviors**: Responses, escalation logic, and visibility can be fine-tuned per use case.
-
-> \[add\_image\_here] – Aura AI behavior configuration screen
-
 ---
 
 ## Data Sources Aura Learns From
 
 Aura is trained on the following sources:
 
-* **Chat History**: It continuously learns from past interactions during a session.
-* **Links & Articles**: Add URLs and internal articles to be parsed into its knowledge.
-* **Q\&A Pairs**: Define direct question-answer examples.
-* **Company Settings**: Includes business name, timezone, contact rules, and language preferences.
-* **Data Fields**: All fields collected via forms or populated manually.
-* **Data Requests**: External API queries Aura can run when specific keywords are detected (e.g., "order status").
-* **Data Updates**: API calls to update records, triggered by user actions or AI interpretation.
+- **Chat History**: It continuously learns from past interactions during a session.
+- **Links & Articles**: Add URLs and internal articles to be parsed into its knowledge.
+- **Q&A Pairs**: Define direct question-answer examples.
+- **Company Settings**: Includes business name, timezone, contact rules, and language preferences.
+- **Data Fields**: All fields collected via forms or populated manually.
+- **Data Requests**: External API queries Aura can run when specific keywords are detected (e.g., "order status").
+- **Data Updates**: API calls to update records, triggered by user actions or AI interpretation.
 
-> \[add\_image\_here] – Example of Data Request config and keyword assignment
+<Frame>
+  ![Playground Default State Pn](/images/Playground-DefaultState.png)
+</Frame>
 
 ---
 
@@ -41,29 +26,27 @@ Aura is trained on the following sources:
 
 1. **User Message Received**
 2. **Aura Matches Intent / Keyword**
-
-   * If match found in Q\&A, it replies.
-   * If match found in keyword-based data request, it fetches external info.
-   * If ambiguous or unknown, it applies fallback logic.
+   - If match found in Q&A, it replies.
+   - If match found in keyword-based data request, it fetches external info.
+   - If ambiguous or unknown, it applies fallback logic.
 3. **Contextual Memory**
-
-   * Retains session context (fields submitted, articles referenced, message trail).
+   - Retains session context (fields submitted, articles referenced, message trail).
 4. **Escalation or Follow-Up**
-
-   * If answer not found after multiple replies, it tags the message with `#fallback` and follows escalation rules.
+   - If answer not found after multiple replies, it tags the message with `#fallback` and follows escalation rules.
 
 ---
 
 ## Fallback & Escalation Handling
 
-* **Fallback Tags**: When Aura cannot confidently respond, it tags the message with `#fallback`.
-* **Unanswered Count Tracking**: You can configure Aura to count how many fallback-tagged messages occur per session.
-* **Agent Escalation**: After X fallbacks, Aura prompts the user with options like:
+- **Fallback Tags**: When Aura cannot confidently respond, it tags the message with `#fallback`.
+- **Unanswered Count Tracking**: You can configure Aura to count how many fallback-tagged messages occur per session.
+- **Agent Escalation**: After X fallbacks, Aura prompts the user with options like:
+  - "Talk to a person"
+  - "That didn't help? Let me connect you."
 
-  * "Talk to a person"
-  * "That didn't help? Let me connect you."
-
-> \[add\_image\_here] – Fallback tag logic & escalation config
+<Frame>
+  ![Aura Configuration Pn](/images/Aura_Configuration.png)
+</Frame>
 
 ---
 
@@ -71,38 +54,52 @@ Aura is trained on the following sources:
 
 You can control how Aura behaves per route or page:
 
-* **Auto Visible on Load**
-* **Delay Appearance**
-* **Visible Only When Triggered**
-* **Hidden on Specific URLs**
+- **Auto Visible on Load**
+- **Delay Appearance**
+- **Visible Only When Triggered**
+- **Hidden on Specific URLs**
 
-Use case example: Hide Aura during checkout or onboarding flows.
+<Note>
+  **Use case example: **Hide Aura during checkout or onboarding flows.
+</Note>
 
 ---
 
 ## Best Practices
 
-* Regularly update linked articles and Q\&A pairs.
-* Keep API responses fast—Aura expects responses under 3 seconds.
-* Use fallback tracking to identify gaps in knowledge.
-* Train with real customer queries via the chat history tool.
+- Regularly update linked articles and Q&A pairs.
+- Keep API responses fast—Aura expects responses under 3 seconds.
+- Use fallback tracking to identify gaps in knowledge.
+- Train with real customer queries via the chat history tool.
 
 ---
 
 ## Roadmap (What’s Coming Next)
 
-* **Multi-language fallback training**
-* **Live memory inspection for debugging**
-* **Personalized summaries at session end**
-* **Automated tagging based on sentiment**
-* **Time-based triggers for proactive outreach**
+<Steps>
+  <Step title="Multi-language fallback training" icon="language">
+    
+  </Step>
+  <Step title="Live memory inspection for debugging" icon="memory">
+    
+  </Step>
+  <Step title="Personalized summaries at session end">
+    
+  </Step>
+  <Step title="Automated tagging based on sentiment">
+    
+  </Step>
+  <Step title="Time-based triggers for proactive outreach">
+    
+  </Step>
+</Steps>
 
 ---
 
 ## Related Pages
 
-* [Data Requests](/features/integrations-and-extensions)
-* [Flow Builder](/features/flows)
-* [Trigger Conditions](/features/triggers)
-* [Fallback Rules](/configuration/routing-rules)
-* [Visibility Settings](/configuration/chat-widget)
+- [Data Requests](/features/integrations-and-extensions)
+- [Flow Builder](/features/flows)
+- [Trigger Conditions](/features/triggers)
+- [Fallback Rules](/configuration/routing-rules)
+- [Visibility Settings](/configuration/chat-widget)

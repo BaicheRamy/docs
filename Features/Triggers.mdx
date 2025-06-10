@@ -1,16 +1,7 @@
 ---
-
 title: "Triggers"
 description: "Understand how to use triggers to automate engagement and streamline interactions with visitors in Emplorium."
 icon: "Bolt"
-------------
-
-## What are Triggers?
-
-**Triggers** in Emplorium are conditions that automatically start flows or actions within the live chat environment. They allow you to proactively engage visitors, personalize experiences, and automate repetitive tasks without manual intervention.
-
-Triggers can detect specific visitor behavior, timing, or data input and then launch predefined actions, such as sending a message, starting a flow, or assigning a tag.
-
 ---
 
 ## Core Concepts
@@ -19,17 +10,19 @@ Triggers can detect specific visitor behavior, timing, or data input and then la
 
 Every trigger must be tied to at least one condition. Emplorium supports:
 
-* **Page URL**: Detect if a visitor is on a specific page.
-* **Time on Page**: Trigger after a certain number of seconds.
-* **Referral Source**: Detect the source (e.g., Google, Facebook).
-* **Scroll Depth**: Trigger when a user scrolls a certain %.
-* **Device Type**: Differentiate between mobile, desktop, or tablet.
-* **First-Time vs Returning Visitor**
-* **Chat Inactivity**: Trigger if the visitor has been idle.
-* **Campaign Tag**: Trigger if a visitor has a campaign-specific tag.
-* **Utm Parameters**: Track and trigger based on marketing UTM parameters.
+- **Page URL**: Detect if a visitor is on a specific page.
+- **Time on Page**: Trigger after a certain number of seconds.
+- **Referral Source**: Detect the source (e.g., Google, Facebook).
+- **Scroll Depth**: Trigger when a user scrolls a certain %.
+- **Device Type**: Differentiate between mobile, desktop, or tablet.
+- **First-Time vs Returning Visitor**
+- **Chat Inactivity**: Trigger if the visitor has been idle.
+- **Campaign Tag**: Trigger if a visitor has a campaign-specific tag.
+- **Utm Parameters**: Track and trigger based on marketing UTM parameters.
 
-> ✅ You can combine multiple conditions using AND/OR logic.
+<Check>
+   You can combine multiple conditions using AND/OR logic.
+</Check>
 
 ---
 
@@ -37,12 +30,12 @@ Every trigger must be tied to at least one condition. Emplorium supports:
 
 Once a condition is met, you can define what action Emplorium takes. Available actions include:
 
-* **Send a Message**: Display a proactive message to the visitor.
-* **Start a Flow**: Automatically launch a specific automation flow.
-* **Assign a Tag**: Tag the visitor for future targeting.
-* **Open Form**: Prompt a specific form for lead capture or feedback.
-* **Route to Team**: Assign the conversation to a particular team or agent group.
-* **Update Profile**: Dynamically modify visitor data fields.
+- **Send a Message**: Display a proactive message to the visitor.
+- **Start a Flow**: Automatically launch a specific automation flow.
+- **Assign a Tag**: Tag the visitor for future targeting.
+- **Open Form**: Prompt a specific form for lead capture or feedback.
+- **Route to Team**: Assign the conversation to a particular team or agent group.
+- **Update Profile**: Dynamically modify visitor data fields.
 
 ---
 
@@ -50,22 +43,24 @@ Once a condition is met, you can define what action Emplorium takes. Available a
 
 Triggers are managed from **Settings → Triggers**. Each trigger has:
 
-* **Name**: Internal title for easy reference.
-* **Status Toggle**: Enable or disable individual triggers.
-* **Condition Builder**: A visual tool to combine conditions.
-* **Action Selector**: Dropdown to select the desired action.
-* **Preview/Test Tool**: See the trigger in action before publishing.
+- **Name**: Internal title for easy reference.
+- **Status Toggle**: Enable or disable individual triggers.
+- **Condition Builder**: A visual tool to combine conditions.
+- **Action Selector**: Dropdown to select the desired action.
+- **Preview/Test Tool**: See the trigger in action before publishing.
 
-> \[add\_image\_here] - Trigger creation and testing UI
+<Frame>
+  ![Create Trigger Pn](/images/CreateTrigger.png)
+</Frame>
 
 ---
 
 ## Best Practices
 
-* **Keep Conditions Simple**: Use the fewest necessary conditions to avoid complexity.
-* **Preview Before Launching**: Always test your triggers to make sure they fire correctly.
-* **Use Tags for Segmentation**: Tag visitors based on trigger logic for easier follow-up.
-* **Monitor Engagement Metrics**: Track which triggers convert and which don’t.
+- **Keep Conditions Simple**: Use the fewest necessary conditions to avoid complexity.
+- **Preview Before Launching**: Always test your triggers to make sure they fire correctly.
+- **Use Tags for Segmentation**: Tag visitors based on trigger logic for easier follow-up.
+- **Monitor Engagement Metrics**: Track which triggers convert and which don’t.
 
 ---
 
@@ -75,35 +70,35 @@ Triggers are managed from **Settings → Triggers**. Each trigger has:
 
 If a visitor lingers on the checkout page for 45 seconds without interaction:
 
-* **Trigger**: Page URL + Time on Page
-* **Action**: Send message “Need help checking out?”
+- **Trigger**: Page URL \+ Time on Page
+- **Action**: Send message “Need help checking out?”
 
 ### Content Promotion
 
 When a visitor arrives from a newsletter campaign:
 
-* **Trigger**: Referral Source = Mailchimp + UTM = newsletter\_june
-* **Action**: Launch a custom flow or welcome message.
+- **Trigger**: Referral Source = Mailchimp \+ UTM = newsletter_june
+- **Action**: Launch a custom flow or welcome message.
 
 ### Lead Capture on Blog
 
 If a visitor scrolls 75% of a blog post:
 
-* **Trigger**: Page URL contains "/blog" + Scroll Depth 75%
-* **Action**: Open form to capture email.
+- **Trigger**: Page URL contains "/blog" \+ Scroll Depth 75%
+- **Action**: Open form to capture email.
 
 ---
 
 ## Trigger Limits & Roadmap
 
-* **Multiple Triggers per Flow**: Supported. A single flow can be activated by several different triggers.
-* **Time-Based Triggers**: Not supported yet. Planned in roadmap.
-* **Trigger Analytics**: Basic analytics available. Enhanced reporting coming soon.
+- **Multiple Triggers per Flow**: Supported. A single flow can be activated by several different triggers.
+- **Time-Based Triggers**: Not supported yet. Planned in roadmap.
+- **Trigger Analytics**: Basic analytics available. Enhanced reporting coming soon.
 
 ---
 
 ## Next Steps
 
-* [Build Your First Trigger](/settings/triggers)
-* [Connect Triggers with Automation Flows](/features/automation-flows)
-* [Analyze Visitor Behavior](/analytics/overview)
+- [Build Your First Trigger](/settings/triggers)
+- [Connect Triggers with Automation Flows](/features/automation-flows)
+- [Analyze Visitor Behavior](/analytics/overview)

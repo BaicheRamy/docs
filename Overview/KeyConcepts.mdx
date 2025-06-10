@@ -15,6 +15,7 @@ Emplorium is structured around a few powerful building blocks that define how au
 At its core, Emplorium is a **conversation-centric platform**. All interactions—whether handled by agents or AI—are grouped into conversation threads that include message history, customer context, and resolution status.
 
 **Key ideas:**
+
 - Threads are continuous and support async communication.
 - AI and human agents can co-exist in a conversation.
 - Conversations support escalations, tags, notes, and assignments.
@@ -24,6 +25,7 @@ At its core, Emplorium is a **conversation-centric platform**. All interactions�
 ## 2. Aura AI Agent
 
 Aura is Emplorium’s native AI assistant. It can learn from:
+
 - Past chat history
 - Articles, documents, and knowledge base content
 - External data fetched via API (data requests)
@@ -31,6 +33,7 @@ Aura is Emplorium’s native AI assistant. It can learn from:
 - Company settings, profile fields, and previous answers
 
 **Highlights:**
+
 - Responds to customer queries in real-time.
 - Supports fallback logic and hand-off to agents.
 - Can use third-party APIs to fetch or update live data.
@@ -45,6 +48,11 @@ Flows define **how actions unfold** in response to triggers or conditions.
 - Conditions use AND/OR logic to combine multiple checks.
 - Flows can automate replies, assign agents, update fields, or call APIs.
 
+<Info>
+  Coming soon: Time-based triggers (e.g., after 5 minutes of inactivity)
+
+</Info>
+
 ---
 
 ## 4. Triggers
@@ -52,17 +60,17 @@ Flows define **how actions unfold** in response to triggers or conditions.
 Triggers determine **when a flow starts**. Unlike conditions, which define **what** must be true, triggers define **when** to run the check.
 
 Examples:
+
 - When a visitor sends a first message
 - When a visitor lands on a pricing page
 - When a user ID is recognized
-
-> Coming soon: Time-based triggers (e.g., after 5 minutes of inactivity)
 
 ---
 
 ## 5. Profiles & Field Data
 
 Visitors and users in Emplorium are represented by **profiles**:
+
 - Profiles are built from submitted forms or manual updates by agents.
 - Profiles include field data such as email, company, plan type, etc.
 - Profiles are not persistent across sessions by default (i.e., no tracking across devices).
@@ -74,11 +82,13 @@ Visitors and users in Emplorium are represented by **profiles**:
 You can categorize conversations and actions using **tags**, which help filter and automate experiences.
 
 Tags can be applied:
+
 - Manually by agents
 - Automatically via flows
 - Based on AI recognition (intent or topic)
 
 Rules can use these tags to:
+
 - Auto-assign conversations
 - Route queries
 - Trigger alerts
@@ -88,6 +98,7 @@ Rules can use these tags to:
 ## 7. Forms & Data Capture
 
 Emplorium allows custom **forms** to gather specific information during a conversation:
+
 - Forms can be triggered manually, by the AI, or via flows
 - Fields within forms map to profile attributes
 - Data captured can be used in subsequent flows or API calls
@@ -101,13 +112,16 @@ These are integrations that power Emplorium's interaction with external systems:
 - **Data Requests**: Retrieve external data using API GET calls when a keyword or intent is detected
 - **Data Updates**: Send external POST/PUT calls to update third-party systems based on user intent or form submission
 
-> All API logic is configured in Settings → Data Requests / Data Updates.
+<Info>
+  All API logic is configured in Settings → Data Requests / Data Updates.
+</Info>
 
 ---
 
 ## 9. Escalations & Fallbacks
 
 When Aura can’t resolve an issue:
+
 - The fallback counter increases (customizable threshold triggers hand-off)
 - A fallback message appears (e.g., "Need help from a human?")
 - A hand-off flow is triggered to route the user to a human agent
@@ -117,6 +131,7 @@ When Aura can’t resolve an issue:
 ## Summary
 
 These concepts form the backbone of Emplorium’s live chat automation platform. Mastering them will empower you to:
+
 - Design smarter engagement journeys
 - Automate repetitive actions
 - Blend AI and human support effectively

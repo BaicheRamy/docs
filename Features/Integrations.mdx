@@ -1,5 +1,4 @@
 ---
-
 title: "Integrations"
 description: "Learn how Emplorium connects with third-party tools and APIs to help you streamline workflows, automate tasks, and access external data directly in your chat experience."
 icon: "book"
@@ -11,19 +10,18 @@ Emplorium offers powerful integration capabilities to extend the platform's func
 
 There are three main types of integrations within Emplorium:
 
-* **Third-party integrations** (e.g., HubSpot, Mailchimp, Slack)
-* **Custom API-based integrations** (Data Requests and Data Updates)
-* **Webhooks for event-driven workflows**
-
+- **Third-party integrations** (e.g., HubSpot, Mailchimp, Slack)
+- **Custom API-based integrations** (Data Requests and Data Updates)
+- **Webhooks for event-driven workflows**
 
 ## 1. Third-party Integrations
 
 Emplorium supports direct connections with popular business tools and platforms, including:
 
-* **CRM Tools**: Salesforce, HubSpot
-* **Marketing Platforms**: Mailchimp, ActiveCampaign
-* **Communication Channels**: Slack, Microsoft Teams
-* **Automation Tools**: Zapier, Make (Integromat)
+- **CRM Tools**: Salesforce, HubSpot
+- **Marketing Platforms**: Mailchimp, ActiveCampaign
+- **Communication Channels**: Slack, Microsoft Teams
+- **Automation Tools**: Zapier, Make (Integromat)
 
 ### How to Set Up:
 
@@ -33,16 +31,16 @@ Emplorium supports direct connections with popular business tools and platforms,
 4. Map fields or event triggers if required
 5. Save and activate the integration
 
-> \[add\_image\_here] - Example: Integration setup UI
+<Frame>
+  ![Integration Pn](/images/integration.png)
+</Frame>
 
 Once integrated, these platforms can:
 
-* Share contact data
-* Trigger messages based on external campaign actions
-* Notify internal channels of user activity
-* Automate data logging and CRM updates
-
-
+- Share contact data
+- Trigger messages based on external campaign actions
+- Notify internal channels of user activity
+- Automate data logging and CRM updates
 
 ## 2. API-Based Integrations
 
@@ -52,29 +50,29 @@ This is one of Emplorium's most flexible and powerful integration mechanisms.
 
 Allow Aura AI to query external data based on specific user intents or keywords.
 
-* Use case: Retrieve order status, fetch CRM record, etc.
-* Configured via **Settings → Data Requests**
-* Requires endpoint URL, method, and optional headers/params
+- Use case: Retrieve order status, fetch CRM record, etc.
+- Configured via **Settings → Data Requests**
+- Requires endpoint URL, method, and optional headers/params
 
 Example:
 
-* Trigger phrase: “Check my delivery”
-* API endpoint: `GET /orders/:orderId`
-* Result is shown in the live chat thread as a formatted AI response
+- Trigger phrase: “Check my delivery”
+- API endpoint: `GET /orders/:orderId`
+- Result is shown in the live chat thread as a formatted AI response
 
 ### b. **Data Updates**
 
 Enable Aura AI to send data or trigger changes in external systems via keyword-based logic.
 
-* Use case: Update ticket status, submit form data, etc.
-* Configured via **Settings → Data Updates**
-* Define the endpoint, method (POST/PUT), and payload structure
+- Use case: Update ticket status, submit form data, etc.
+- Configured via **Settings → Data Updates**
+- Define the endpoint, method (POST/PUT), and payload structure
 
-> \[add\_image\_here] - Data request/update configuration interface
+<Frame>
+  ![Data Request Pn](/images/DataRequest.png)
+</Frame>
 
 These integrations are AI-aware, meaning Aura can dynamically choose which API to call based on detected intent.
-
-
 
 ## 3. Webhooks
 
@@ -82,10 +80,10 @@ Webhooks allow Emplorium to push real-time events to external systems.
 
 ### Example Events:
 
-* New chat message
-* AI fallback trigger
-* Form submission
-* User rated conversation
+- New chat message
+- AI fallback trigger
+- Form submission
+- User rated conversation
 
 ### Setup Steps:
 
@@ -97,11 +95,9 @@ Webhooks allow Emplorium to push real-time events to external systems.
 
 Payloads are sent as `application/json` and can be used to:
 
-* Trigger Zapier automations
-* Notify backend systems
-* Log events to analytics
-
-
+- Trigger Zapier automations
+- Notify backend systems
+- Log events to analytics
 
 ## Integration Use Cases
 
@@ -118,6 +114,6 @@ Here are some practical ways integrations amplify Emplorium’s utility:
 
 ## Next Steps
 
-* [Connect Integrations →](/settings/integrations)
-* [Create API Keys →](/settings/api-keys)
-* [Enable Aura AI to use APIs →](/features/aura-ai-agent)
+- [Connect Integrations →](/settings/integrations)
+- [Create API Keys →](/settings/api-keys)
+- [Enable Aura AI to use APIs →](/features/aura-ai-agent)
