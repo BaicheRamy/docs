@@ -1,6 +1,8 @@
 button#assistant-entry,
+button#assistant-entry-mobile,
 [aria-label="Ask AI"],
 .mint-chat-widget,
 .mint-ai-assistant {
   display: none !important;
 }
+
