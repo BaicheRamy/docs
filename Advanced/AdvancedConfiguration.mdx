@@ -2,39 +2,30 @@
 title: "Advanced Configuration"
 description: "Unlock the full power of Emplorium with advanced settings that give you fine-grained control over the behavior, appearance, and logic of your chat experience."
 icon: "Sliders"
----------------
-
-## Overview
-
-The Advanced Configuration section in Emplorium empowers administrators to go beyond the basics, offering tools to fine-tune AI behavior, customize visitor targeting, inject dynamic data, and refine escalation logic. This is ideal for users managing complex workflows or high-volume interactions that demand personalization, reliability, and control.
-
 ---
 
 ## AI Behavior Configuration
 
 ### 1. AI Response Style
 
-* Choose between response modes such as:
-
-  * **Professional** (formal, concise)
-  * **Conversational** (friendly, informal)
-  * **Minimal** (short, data-focused)
-* These options affect Aura AI’s tone, sentence length, and intent confidence thresholds.
+- Choose between response modes such as:
+  - **Professional** (formal, concise)
+  - **Conversational** (friendly, informal)
+  - **Minimal** (short, data-focused)
+- These options affect Aura AI’s tone, sentence length, and intent confidence thresholds.
 
 ### 2. AI Fallback Strategy
 
-* Configure how Aura handles uncertainty or failed attempts:
-
-  * **Escalate to Human Agent** after X failed responses.
-  * **Offer Help Bubbles** after fallback events.
-  * **Tag conversations** with system labels for future analysis.
+- Configure how Aura handles uncertainty or failed attempts:
+  - **Escalate to Human Agent** after X failed responses.
+  - **Offer Help Bubbles** after fallback events.
+  - **Tag conversations** with system labels for future analysis.
 
 ### 3. AI Escalation Thresholds
 
-* Define thresholds to trigger fallback or human escalation:
-
-  * **Max unanswered questions** (e.g., 3 per conversation)
-  * **Flagged intents** (e.g., detected frustration or urgent keywords)
+- Define thresholds to trigger fallback or human escalation:
+  - **Max unanswered questions** (e.g., 3 per conversation)
+  - **Flagged intents** (e.g., detected frustration or urgent keywords)
 
 ---
 
@@ -42,24 +33,20 @@ The Advanced Configuration section in Emplorium empowers administrators to go be
 
 Advanced users can fine-tune their conditions and logic across flows and triggers:
 
-* **Use AND/OR Logic** to combine conditions like:
-
-  * Visitor page URL contains `pricing` **AND** time spent > 30s
-  * Chat started **OR** intent = “book a demo”
-
-* **Nested Logic Support** for more nuanced targeting:
-
-  * Example: If (Location = "France" AND Returning Visitor = true) OR (UTM source = "email-campaign")
-
-* **Custom Visitor Properties** can be created and injected via JavaScript to be used in conditions.
+- **Use AND/OR Logic** to combine conditions like:
+  - Visitor page URL contains `pricing` **AND** time spent \> 30s
+  - Chat started **OR** intent = “book a demo”
+- **Nested Logic Support** for more nuanced targeting:
+  - Example: If (Location = "France" AND Returning Visitor = true) OR (UTM source = "email-campaign")
+- **Custom Visitor Properties** can be created and injected via JavaScript to be used in conditions.
 
 ---
 
 ## Session Configuration & Privacy
 
-* **Session Timeout Settings**: Control how long visitor sessions are retained before reset.
-* **Cookie Behavior**: Toggle Emplorium’s use of cookies for tracking anonymous sessions.
-* **Tracking Consent Management**: Show consent banners if GDPR or CCPA applies.
+- **Session Timeout Settings**: Control how long visitor sessions are retained before reset.
+- **Cookie Behavior**: Toggle Emplorium’s use of cookies for tracking anonymous sessions.
+- **Tracking Consent Management**: Show consent banners if GDPR or CCPA applies.
 
 ---
 
@@ -67,9 +54,9 @@ Advanced users can fine-tune their conditions and logic across flows and trigger
 
 While Emplorium does not yet support persistent memory across sessions, upcoming features will allow:
 
-* AI to remember prior conversations (opt-in).
-* Cross-session profile enrichment.
-* Memory reset rules per conversation/session.
+- AI to remember prior conversations (opt-in).
+- Cross-session profile enrichment.
+- Memory reset rules per conversation/session.
 
 ---
 
@@ -77,7 +64,7 @@ While Emplorium does not yet support persistent memory across sessions, upcoming
 
 Administrators can pass custom variables into the chat widget or session context:
 
-* JavaScript snippet to inject:
+- JavaScript snippet to inject:
 
 ```javascript
 window.emploriumSettings = {
@@ -87,30 +74,30 @@ window.emploriumSettings = {
 };
 ```
 
-* These variables are accessible by flows, triggers, and the AI for personalized experiences.
+- These variables are accessible by flows, triggers, and the AI for personalized experiences.
 
 ---
 
 ## Environment Modes
 
-* **Live Mode**: For production/live visitor interactions.
-* **Test Mode**: Used inside the Virtual Visitor tab for simulating visitor conversations and flows without real traffic.
-* **Debug Mode**: Show live logs of trigger matches, intent detection, and fallback reason codes.
+- **Live Mode**: For production/live visitor interactions.
+- **Test Mode**: Used inside the Virtual Visitor tab for simulating visitor conversations and flows without real traffic.
+- **Debug Mode**: Show live logs of trigger matches, intent detection, and fallback reason codes.
 
 ---
 
 ## Best Practices
 
-* **Use Test Mode** before publishing any new flows or triggers.
-* Regularly **review fallback tags** to improve AI and rule quality.
-* Enable **consent banners** if operating in regulated regions (e.g., EU).
-* Inject only **safe and minimal variables** to avoid data leakage.
+- **Use Test Mode** before publishing any new flows or triggers.
+- Regularly **review fallback tags** to improve AI and rule quality.
+- Enable **consent banners** if operating in regulated regions (e.g., EU).
+- Inject only **safe and minimal variables** to avoid data leakage.
 
 ---
 
 ## Related Resources
 
-* [Triggers & Conditions](/features/triggers)
-* [Flows Configuration](/features/flows)
-* [Aura AI Behavior](/features/aura-ai)
-* [Virtual Visitor Testing](/features/virtual-visitor)
+- [Triggers & Conditions](/features/triggers)
+- [Flows Configuration](/features/flows)
+- [Aura AI Behavior](/features/aura-ai)
+- [Virtual Visitor Testing](/features/virtual-visitor)
