@@ -1,104 +1,142 @@
 ---
-title: "Triggers"
-description: "Understand how to use triggers to automate engagement and streamline interactions with visitors in Emplorium."
+description: "Triggers are the backbone of proactive customer engagement in Emplorium. By setting up intelligent rules, you can ensure your visitors receive the right message at the right time, guiding them through their journey, collecting valuable information, or offering timely assistance without requiring manual intervention."
 icon: "Bolt"
+title: "Triggers: Automate Proactive Customer Engagement"
 ---
 
-## Core Concepts
+## What are Emplorium Triggers?
 
-### 1. **Trigger Conditions**
+Triggers are a set of **Conditions** that, when met, execute specific **Actions**. They act as an automated "if this, then that" system for your customer interactions.
 
-Every trigger must be tied to at least one condition. Emplorium supports:
+For example:
 
-- **Page URL**: Detect if a visitor is on a specific page.
-- **Time on Page**: Trigger after a certain number of seconds.
-- **Referral Source**: Detect the source (e.g., Google, Facebook).
-- **Scroll Depth**: Trigger when a user scrolls a certain %.
-- **Device Type**: Differentiate between mobile, desktop, or tablet.
-- **First-Time vs Returning Visitor**
-- **Chat Inactivity**: Trigger if the visitor has been idle.
-- **Campaign Tag**: Trigger if a visitor has a campaign-specific tag.
-- **Utm Parameters**: Track and trigger based on marketing UTM parameters.
-
-<Check>
-   You can combine multiple conditions using AND/OR logic.
-</Check>
+- **IF** a visitor spends more than 60 seconds on your pricing page, **THEN** automatically send them a message offering help.
+- **IF** a visitor's country is "Germany" AND they are on a specific product page, **THEN** assign a "Germany Sales Lead" tag to their chat.
 
 ---
 
-### 2. **Trigger Actions**
+## Building a Trigger: Conditions & Actions
 
-Once a condition is met, you can define what action Emplorium takes. Available actions include:
+Creating a powerful trigger involves defining precise conditions and the actions Emplorium should take once those conditions are met.
 
-- **Send a Message**: Display a proactive message to the visitor.
-- **Start a Flow**: Automatically launch a specific automation flow.
-- **Assign a Tag**: Tag the visitor for future targeting.
-- **Open Form**: Prompt a specific form for lead capture or feedback.
-- **Route to Team**: Assign the conversation to a particular team or agent group.
-- **Update Profile**: Dynamically modify visitor data fields.
+### 1. **Conditions: Defining When a Trigger Fires**
 
----
+Conditions are the "if" part of your trigger. You can combine multiple conditions using **AND/OR logic** to create highly specific targeting rules.
 
-## Managing Triggers
+<AccordionGroup>
+  <Accordion title="Visitor-Based Conditions">
+    These conditions are based on the visitor's characteristics or behavior on your site.
 
-Triggers are managed from **Settings → Triggers**. Each trigger has:
+    - <Icon icon="globe-pointer" /> **Visitor Page URL:** The specific URL the visitor is currently viewing.
+    - <Icon icon="circle-dot" /> **Visitor Online:** Whether the visitor is currently active on your website.
+    - <Icon icon="message-dots" /> **Visitor Sends a Message:** Triggers when the visitor sends _any_ message.
+    - <Icon icon="calendar" /> **Days of the Week:**  Specific days when the trigger should be active.
+    - <Icon icon="chart-network" /> **Visitor IP:**  The IP address of the visitor.
+    - <Icon icon="square-user" /> **Visitor Name:**  The known name of the visitor (requires data to be saved).
+    - <Icon icon="envelope" /> **Visitor Email:**  The known email of the visitor (requires data to be saved).
+    - <Icon icon="phone" /> **Visitor Phone:**  The known phone number of the visitor (requires data to be saved).\*
+    - <Icon icon="desktop" /> **Browser Name:**  The web browser the visitor is using (e.g., Chrome, Firefox).
+    - <Icon icon="code-branch" /> **Browser Version:**  The specific version of the visitor's browser.
+    - <Icon icon="gear" /> **OS Name:**  The operating system of the visitor's device (e.g., Windows, macOS, Android).
+    - <Icon icon="mobile" /> **Device Type:**  The type of device (e.g., Desktop, Mobile, Tablet).
+    - <Icon icon="flag" /> **Visitor Country:**  The detected country of the visitor based on IP address.
+  </Accordion>
+  <Accordion title="Agent-Based Conditions">
+    These conditions are based on the availability of your agents.
 
-- **Name**: Internal title for easy reference.
-- **Status Toggle**: Enable or disable individual triggers.
-- **Condition Builder**: A visual tool to combine conditions.
-- **Action Selector**: Dropdown to select the desired action.
-- **Preview/Test Tool**: See the trigger in action before publishing.
+    - <Icon icon="user-check" /> **If Agent Online:** Triggers if at least one agent is currently online.
+    - <Icon icon="user-slash" /> **If Agent Offline:** Triggers if no agents are currently online.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Conditions that rely on "visitor values" (e.g., Name, Email, Phone) will only work if that data has already been collected and saved to the visitor's profile (e.g., via a form in a Flow or manual input by an agent).
+</Note>
 
 <Frame>
   ![Create Trigger Pn](/images/CreateTrigger.png)
 </Frame>
 
----
+### 2. **Actions: What the Trigger Does**
 
-## Best Practices
+Actions are the "then that" part of your trigger, executed when all specified conditions are met.
 
-- **Keep Conditions Simple**: Use the fewest necessary conditions to avoid complexity.
-- **Preview Before Launching**: Always test your triggers to make sure they fire correctly.
-- **Use Tags for Segmentation**: Tag visitors based on trigger logic for easier follow-up.
-- **Monitor Engagement Metrics**: Track which triggers convert and which don’t.
+- <Icon icon="message-dots" /> **Send Auto Message:** Automatically sends a predefined message to the visitor. This message will be sent _every time_ the conditions are met.
+- <Icon icon="comment-dots" /> **Send First Message:** Automatically sends a predefined message, but only _one time_ per visitor when the conditions are first met. Ideal for welcome messages or initial prompts.
+- <Icon icon="tags" /> **Assign Tag:** Automatically applies a specific tag to the visitor's chat (e.g., `pricing-interest`, `abandoned-cart`).
+- <Icon icon="user-tie" /> **Assign Agent:** Automatically assigns the chat to a specific agent.
+- <Icon icon="building" /> **Assign Department:** Automatically assigns the chat to a specific department.
 
----
+## Common Use Cases for Triggers
 
-## Use Cases
+Triggers are incredibly versatile. Here are some ways you can leverage them to enhance your customer engagement:
 
-### Abandonment Recovery
+<CardGroup cols={2}>
+  <Card title="Proactive Greetings & Onboarding" icon="comments-dollar">
+    Trigger a personalized welcome message or an onboarding flow when a new visitor lands on your site or reaches a specific page for the first time.
 
-If a visitor lingers on the checkout page for 45 seconds without interaction:
+    \_Example: If _`Visitor Page URL contains /onboarding`_, THEN \_`Send First Message: "Welcome! Need help getting started?"`
+  </Card>
+  <Card title="Sales & Lead Qualification" icon="dollar-sign">
+    Identify high-intent visitors and offer timely assistance to convert them into leads.
 
-- **Trigger**: Page URL \+ Time on Page
-- **Action**: Send message “Need help checking out?”
+    Example: If `Visitor Page URL contains /pricing` AND `Time on Page &gt; 30 seconds`, THEN `Send Auto Message: "Our sales team is available to answer any questions about pricing!"`
+  </Card>
+</CardGroup>
 
-### Content Promotion
+<CardGroup cols={2}>
+  <Card title="Support & Self-Service" icon="life-ring">
+    Guide visitors to relevant resources or connect them with support when they seem to be struggling.
 
-When a visitor arrives from a newsletter campaign:
+    Example: If `Visitor Page URL is /troubleshooting` AND `Time on Page = 60 seconds`, THEN `Send First Message: "It looks like you're on our troubleshooting page. Can I help you find a solution?"`
+  </Card>
+  <Card title="Re-engaging Abandoned Sessions" icon="shop">
+    Send a reminder or offer help to visitors who might be about to leave without completing a key action.
 
-- **Trigger**: Referral Source = Mailchimp \+ UTM = newsletter_june
-- **Action**: Launch a custom flow or welcome message.
+    Example: If `Visitor Page URL contains /checkout` AND `Visitor is Online is false` (after a short delay), THEN `Send First Message: "Did you encounter any issues with your checkout?"`
+  </Card>
+  <Card title="Localized Support" icon="map-location-dot">
+    Route visitors to specific agents or departments based on their geographic location or language preference (when multi-language support is available).
 
-### Lead Capture on Blog
+    Example: If `Visitor Country is Germany`, THEN `Assign Department: "German Support"`
+  </Card>
+</CardGroup>
 
-If a visitor scrolls 75% of a blog post:
+## Managing Your Triggers
 
-- **Trigger**: Page URL contains "/blog" \+ Scroll Depth 75%
-- **Action**: Open form to capture email.
+- **Activation Status:** Easily toggle triggers `On` or `Off` as needed without deleting them.
+- **Prioritization:** (Coming Soon) Set an order of priority for triggers, especially if multiple conditions could overlap.
+- **Testing:** Utilize the **Virtual Visitor** feature to test your trigger configurations in a sandbox environment before deploying them live.
 
----
+## Best Practices for Effective Trigger Usage
 
-## Trigger Limits & Roadmap
+<Tip>
+  To get the most out of Emplorium Triggers, consider these best practices:
+</Tip>
 
-- **Multiple Triggers per Flow**: Supported. A single flow can be activated by several different triggers.
-- **Time-Based Triggers**: Not supported yet. Planned in roadmap.
-- **Trigger Analytics**: Basic analytics available. Enhanced reporting coming soon.
-
----
+<Steps>
+  <Step title="Start Simple">
+    Begin with one or two clear triggers to get comfortable with the functionality. Avoid overly complex `AND/OR` logic initially.
+  </Step>
+  <Step title="Define Clear Goals">
+    Before creating a trigger, identify what you want to achieve (e.g., reduce bounce rate on a specific page, increase demo requests).
+  </Step>
+  <Step title="Avoid Overwhelm">
+    Don't bombard your visitors with too many messages. Use `Send First Message` for initial prompts and ensure your auto messages provide genuine value.
+  </Step>
+  <Step title="Test Thoroughly">
+    Always use the \<Icon icon="user-secret" /\> **Virtual Visitor** to simulate scenarios and ensure your triggers fire as expected before going live. This prevents unintended messages or routing issues.
+  </Step>
+  <Step title="Monitor & Refine">
+    Regularly review the performance of your triggers. Are they achieving their goals? Do visitors respond positively? Adjust conditions and messages based on your analytics.
+  </Step>
+  <Step title="Pair with Flows (Advanced)">
+    For more complex interactions after a trigger fires (e.g., asking multiple questions, collecting specific data), consider using a [**Flow**](/Features/Flows) instead of a simple trigger.
+  </Step>
+</Steps>
 
 ## Next Steps
 
-- [Build Your First Trigger](/settings/triggers)
-- [Connect Triggers with Automation Flows](/features/automation-flows)
-- [Analyze Visitor Behavior](/analytics/overview)
+- [Explore Flows for Advanced Automation](/Features/Flows) - _Build multi-step conversations and data collection workflows._
+- [Learn about Aura AI](/Features/AuraAi) - _Integrate intelligent responses into your automated messages._
+- [Use the Virtual Visitor](/Features/VirtualVisitor) - _Test your triggers and other configurations safely._

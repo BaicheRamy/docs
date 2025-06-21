@@ -1,85 +1,150 @@
 ---
-title: "Profiles"
-description: "Understand how Emplorium uses visitor profiles to track and leverage customer data during live chat interactions."
+title: "Profiles: Understanding Your Customer in Real-Time"
+description: "Emplorium creates a unique profile for each visitor interacting with your chat widget. This profile is continuously enriched with data collected during the session – through conversations, forms, and API updates. While current profiles are session-based, they are vital for delivering contextual and informed support during an active chat."
 icon: "User"
 ---
 
-## What are Profiles?
+## What are Emplorium Profiles?
 
-Profiles in Emplorium represent the individual visitors interacting with your chat widget. Each profile is dynamically created during a session and populated with available data from conversations, forms, and API updates. Profiles allow agents and Aura AI to deliver personalized, contextual experiences.
+A visitor profile is a temporary digital record that aggregates key information about an active user. Think of it as a snapshot of who your customer is _right now_ in their current interaction, providing valuable context for your team.
+
+<Frame>
+  ![Profiles Pn](/images/profiles.png)
+</Frame>
 
 ---
 
 ## Key Concepts
 
+Understanding these core concepts is essential for leveraging Emplorium's profile functionality effectively.
+
 ### 1. **Session-Based Identification**
-- Profiles are **not persistent across sessions**. If the same visitor returns via a different browser, device, or clears cookies, a new profile will be generated.
-- No cross-device or long-term re-identification is performed.
 
-### 2. **Data Sources**
-- **Form Submissions**: Profile fields are auto-filled when users submit forms during chat interactions.
-- **Manual Edits**: Agents can manually edit or add fields directly in the profile panel.
-- **API Updates**: Data received from external APIs via Data Requests or Data Updates can also enrich the profile.
+<Warning>
+  Currently, Emplorium profiles are **not persistent across sessions**.
+</Warning>
 
-### 3. **Field Customization**
-- Admins can configure custom profile fields (text, number, date, dropdown) in **Settings → Profiles**.
-- These fields can be mapped to form inputs or external data.
+This means:
+
+- If the same visitor returns via a different browser, device, or clears their cookies, a new, separate profile will be generated for that new session.
+- Emplorium does **not** perform cross-device or long-term re-identification of visitors. &lt;/Callout\> Each profile is tied to a specific session. If a visitor closes their browser and reopens it, or uses a different device, they will be identified as a "new" visitor in Emplorium, and a new profile will be created.
+
+### 2. Dynamic Data Sources
+
+Profile fields are populated and updated from various sources during an active session:
+
+- **Form Submissions:** When visitors submit forms within the chat widget (e.g., pre-chat forms, forms sent via Flows or by agents), their responses automatically populate relevant profile fields.
+- **Manual Agent Edits:** Agents can directly edit or add information to profile fields from the right-side profile panel during an active conversation.
+- **API Updates (Data Updates):** Data received from your external systems via configured Data Update (POST/PUT) API calls can enrich profile fields.
+- **System-Generated Data:** Emplorium automatically collects basic metadata like IP address, browser type, operating system, and the time of their first visit in the current session.
+
+### 3. Customizable Profile Fields
+
+Admins have full control over defining custom profile fields to capture the specific data relevant to their business.
+
+<Steps>
+  <Step title="Access Settings">
+    Navigate to `Settings > Chat Settings > Data fields`
+  </Step>
+  <Step title="Create New Data Field">
+    Click "Create a new Datafield". You'll need to provide:
+
+    - **Name:** (e.g., `customer_segment`) 
+    - **Label:** (e.g., `Customer Segment`) 
+    - **Format:** Choose the input type (Text, Textarea, Select, Radio, Checkbox). 
+    - **Validation (Optional):** Include regex for Text fields if specific format validation is required.
+  </Step>
+  <Step title="Map to Forms & Flows">
+    These custom fields can then be used in:
+
+    - **Forms:** When creating a form, you can select these data fields to gather specific information from visitors. 
+    - **Flows:** Data collected via forms in a Flow can directly update these profile fields using the "Send Form" block. 
+    - **Aura AI:** Aura AI can reference these fields for personalized responses.
+  </Step>
+</Steps>
+
+## Profile Components in the Inbox
+
+When viewing an active conversation in the Inbox, the right-side panel (Visitor Details) provides a comprehensive view of the visitor's profile.
+
+<Tabs>
+  <Tab title="Profile Tab">
+    This section summarizes core visitor information and custom attributes: 
+
+    - **Basic Details:** Includes the Department the chat is assigned to, Priority (set by agent), and current Assignee(s). 
+    - **Attributes:** Displays all custom profile fields you've defined, populated with data. 
+    - **Visitor Data Device:** An expandable section with technical details like Time on Site, Browser, Device Type (desktop/laptop), IP address, and Country.
+    - **Notes: **Allows agents to add internal, private notes about this specific user that are visible only to other agents. 
+  </Tab>
+  <Tab title="Browse History Tab">
+    Provides a chronological audit log of the visitor's navigation within your targeted website during their current session, tracking the URLs they've visited.
+  </Tab>
+  <Tab title="Previous Conversations Tab (Coming Soon)">
+    Lists all past chats this specific visitor has had in the app _within the same session_ or if their session was somehow preserved. Clicking an entry loads the full historical conversation view.
+  </Tab>
+</Tabs>
 
 ---
 
-## Profile Components
+## How Profiles are Updated
 
-### Basic Info Panel
-- Name, Email, Phone, Location (if available from form or IP).
-- Metadata like browser type, operating system, and first seen timestamp.
+Profiles are dynamic and can be enriched throughout a conversation:
 
-### Custom Fields
-- Configurable fields per your business needs (e.g. plan type, region, loyalty score).
-- Used in Flows, Triggers, or personalizing AI responses.
+### By Agents
 
-### Conversation History
-- Linked to the profile for real-time agent and AI reference.
-- Helps in providing continuity during ongoing chats.
+- Agents can directly edit any profile field from the **Visitor Details (right panel)** during an active chat. This is invaluable for correcting inaccuracies, adding missing information, or enriching details on the fly based on conversation context. #include_picture_of_agent_editing_profile
 
----
+### By Aura AI
 
-## Profile Editing
-
-### By Agents:
-- Agents can edit any profile field directly from the right-side profile panel during a chat.
-- Useful for correcting or enhancing missing information on-the-fly.
-
-### By AI:
-- Aura AI can suggest updates or automatically store form-submitted info to profiles.
-- Only updates fields explicitly configured in the profile schema.
+- **Form Submissions:** Aura AI can automatically store information submitted by the user through forms (e.g., via a `Send Form` block in a Flow) directly into the configured profile fields.
+- **Data Updates:** If Aura is configured to trigger a [Data Update (POST/PUT)](/Advanced/DataRequest&Update) API call, it can update profile fields with information received from your external systems.
+- Aura only updates fields that are explicitly configured within your profile schema.
 
 ---
 
-## Use Cases
+## Strategic Use Cases for Profiles (Current & Future)
 
-- **Lead Qualification**: Enrich profiles with form data or API checks (e.g. CRM match).
-- **AI Personalization**: Aura references profile values when answering (e.g. "Hi John, your plan is Premium.")
-- **Routing & Automation**: Trigger Flows based on profile attributes (e.g. VIP tier, location).
+Leveraging profiles enhances personalization and automation:
+
+<CardGroup cols={2}>
+  <Card title="Real-Time Lead Qualification" icon="clipboard-check">
+    Enrich profiles with form data collected in pre-chat forms or Flows. For example, ask about company size or specific needs, and use that profile data to trigger a `Tag Chat` action.
+  </Card>
+  <Card title="In-Session AI Personalization" icon="robot">
+    Aura AI can reference profile values during a conversation to provide personalized answers (e.g., "Hi [Visitor Name], it looks like your current plan is [Plan Type]. How can I help?").
+  </Card>
+  <Card title="Dynamic Routing & Automation" icon="route">
+    Use profile attributes (e.g., `department_interest`, `product_tier`) as conditions in your [<u>Triggers</u>](/Features/Triggers)[ ](/Features/Triggers)or [<u>Flows</u>](/Features/Flows)[ ](/Features/Flows)to route chats to the correct department or agent, or to initiate specific automated messages.
+  </Card>
+</CardGroup>
+
 
 ---
 
 ## Privacy Considerations
 
-- **Temporary Storage**: Profiles are short-lived and reset with new sessions.
-- **Manual Deletion**: Agents can clear profile data manually if requested by the user.
-- **No Persistent Tracking**: The system avoids any long-term tracking in compliance with privacy regulations.
+Emplorium takes data privacy seriously.
+
+- **Temporary Storage:** Current profiles are designed to be short-lived, primarily providing context for the ongoing session.
+- **No Persistent Tracking:** The system, in its current form, avoids long-term, cross-session tracking of individual users for compliance and privacy.
+- **Manual Deletion:** Agents have the ability to clear specific profile data manually within the Inbox if a user requests it.
 
 ---
 
 ## Future Improvements (Planned)
 
-- **Persistent Profiles**: Ability to link returning users based on login or CRM match.
-- **Profile Export/Import**: Admins will be able to export profile data for analysis or import predefined profiles.
-- **Profile Segments**: Create segments based on profile attributes for tailored Flows and AI behavior.
+We are continuously evolving Emplorium's profile capabilities to empower even deeper personalization and data management:
 
----
+- **Persistent Profiles:** The ability to link returning users based on secure login identifiers or CRM matches, enabling a consistent view of customer history across multiple sessions.
+- **Profile Export/Import:** Functionality for Admins to export profile data for external analysis or import predefined customer profiles into Emplorium.
+- **Profile Segments:** The ability to create dynamic segments based on various profile attributes, allowing for highly targeted Flows, Triggers, and AI behaviors.
+
+<Update label="06/21/2025" description="">
+  **Planned Release:** Persistent Profiles are a high-priority item on our roadmap for Q1 2026.
+</Update>
 
 ### Next Steps
-- [Set Up Custom Fields →](/settings/profile-fields)
-- [Connect API to Enrich Profiles →](/features/integrations-and-extensions)
-- [Use Profiles in Triggers & Flows →](/features/triggers)
+
+- [Set Up Custom Data Fields](/essentials/settings) - _Define the specific attributes you want to collect and store in visitor profiles._
+- [Integrate APIs to Enrich Profiles](/Advanced/DataRequest&Update) - _Learn how to pull or push data from external systems to update profiles._
+- [Use Profiles in Triggers & Flows](/Features/Flows) - _Automate actions and personalize conversations based on profile attributes._

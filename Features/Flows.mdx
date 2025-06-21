@@ -1,125 +1,169 @@
 ---
-title: "Flows"
-description: "Learn how Flows power automated, condition-based logic inside Emplorium to streamline customer interactions."
+description: "Flows are your visual canvas for crafting dynamic customer interactions. Unlike simple triggers, Flows enable you to guide visitors through structured conversations, collect specific information, perform actions, and ensure they reach the right outcome, whether it's self-service via Aura AI or a seamless handoff to a human agent."
 icon: "hashnode"
+title: "Flows: Design Interactive Customer Journeys"
 ---
 
-## Key Flow Components
+## What are Emplorium Flows?
 
-### 1. **Start Condition**
+A Flow is a sequence of modular blocks that define a conversational path. You design these paths using an intuitive drag-and-drop builder, allowing for complex logic and personalized visitor experiences.
 
-Every flow must begin with a condition. This can be:
-
-- A Trigger event (e.g., "User says something containing X")
-- A user visiting a specific page
-- A form submission
-- A fallback (e.g., when the AI can't answer)
-
-### 2. **Actions (Steps)**
-
-Once the flow starts, it can execute any of the following:
-
-- **Send Message**: Text, rich reply, image, or quick reply options.
-- **Ask a Question**: Wait for a user reply to proceed.
-- **Update Field**: Update a profile field based on conversation data.
-- **Call Data Request**: Retrieve third-party data via API based on user input.
-- **Send Data Update**: Push user-provided data to an external system.
-- **Branch Logic**: Create conditional branches using AND/OR operators.
-- **Tag Chat**: Apply labels based on user behavior or flow outcome.
-- **Escalate to Agent**: Route to a human when certain conditions are met.
-- **End Flow**: Cleanly stop the flow once an outcome is met.
-
-### 3. **Branching**
-
-Use IF/ELSE and AND/OR logic to branch behavior within the flow based on:
-
-- User input
-- Tags applied
-- Field values
-- Previous responses
-
-### 4. **AI Response Integration**
-
-Flows can contain steps that use Aura AI to respond dynamically:
-
-- Ask AI to rephrase
-- Provide a smart reply suggestion
-- Let AI attempt a fallback before escalating
-
----
-
-## Example Use Cases
-
-- **Lead Qualification Flow**:
-  - Trigger: Page visit = /pricing
-  - Ask name, company size
-  - Qualify lead
-  - Route to sales agent if enterprise
-- **Fallback Escalation Flow**:
-  - Trigger: AI fallback tag hit 3 times
-  - Show buttons: "Did this help?" / "Talk to a human"
-  - If user selects human, escalate chat
-- **Booking Flow**:
-  - Trigger: Keyword = "demo"
-  - Ask availability
-  - Call data update API to book meeting
-
----
-
-## Flow Builder UX
-
-The Flow Builder UI is:
-
-- **Visual & Drag-and-Drop**
-- **Supports nesting & branches**
-- **Shows real-time test cases**
-- **Lets you preview user paths**
-- **Each flow clearly shows entry condition \+ actions \+ exits**
-
-You can:
-
-- Duplicate flows
-- Import/export logic
-- Preview or test with mock data
-- Set flow priority if multiple flows share a trigger
+Flows are typically initiated by a **Start Condition** (similar to a Trigger) and then progress through various **Action Blocks** based on visitor input or predefined logic.
 
 <Frame>
   ![Flows Example Pn](/images/Flows_example.png)
 </Frame>
 
----
+## Building a Flow: Start Conditions & Modular Blocks
 
-## Best Practices
+Creating a Flow involves two main components: defining when the Flow should begin and assembling the series of actions and questions it will execute.
 
-- Use **clear entry conditions** to avoid unintended triggering.
-- Always add **end steps** or escalation to avoid loops.
-- Test **all branches** for edge cases.
-- Use **tags and profile updates** to track behavior inside flows.
+### 1. **Start Conditions: Initiating a Flow**
 
----
+A Flow can be initiated by various visitor actions or environmental factors. These conditions determine when your automated journey begins.
 
-## Flow Management
+<AccordionGroup>
+  <Accordion title="Visitor Behavior & Presence">
+    - <Icon icon="globe-pointer" /> **_When Visitor Lands on a Page:_** Starts when a visitor arrives on a specified URL. 
+    - <Icon icon="circle-dot" /> **When Visitor is Online:** Triggers if the visitor is actively Browse your site.
+    - <Icon icon="message-dots" /> **_When Visitor Sends a Message:_** Initiates the Flow when the visitor sends any message in the chat.
+  </Accordion>
+  <Accordion title="Scheduled & Time-Based">
+    - <Icon icon="calendar" /> **On Scheduled Days:** Allows Flows to run on specific days of the week.
+  </Accordion>
+  <Accordion title="Visitor Identification & Attributes">
+    - <Icon icon="chart-network" /> **_From a Specific IP Range:_** Targets visitors from a defined IP address range. 
+    - <Icon icon="square-user" /> **For Identified Visitors:** Triggers for visitors whose profiles are known.
+    - <Icon icon="envelope" /> **_For Known Emails:_** Initiates for visitors whose email addresses are recorded. 
+    - <Icon icon="phone" /> **For Verified Phone Numbers:** Starts for visitors with known phone numbers. 
+    - <Icon icon="flag" /> **Based on Visitor Country:** Triggers based on the visitor's detected country.
+  </Accordion>
+  <Accordion title="Device & Browser Specificity">
+    - <Icon icon="desktop" /> **_For Specific Browsers:_** Targets users based on their web browser (e.g., Chrome, Firefox). 
+    - <Icon icon="code-branch" /> **For Certain Browser Versions:** Targets users with specific browser versions.
+    - <Icon icon="gear" /> **_For Specific Operating Systems:_** Triggers for users on particular operating systems (e.g., Windows, macOS). 
+    - <Icon icon="mobile" /> **Based on Device Type:** Initiates for users on Desktop, Mobile, or Tablet devices.
+  </Accordion>
+  <Accordion title="Agent Availability">
+    - <Icon icon="user-check" /> **_When Agents Are Online:_** Triggers if at least one agent is available. 
+    - <Icon icon="user-slash" /> **When Agents Are Offline:** Triggers if no agents are currently online.
+  </Accordion>
+</AccordionGroup>
 
-- Flows are stored in the **Automation \> Flows** section.
-- You can **enable/disable** individual flows.
-- Flows can be tied to multiple **Triggers**.
-- You can **prioritize** flows when more than one could apply.
+<Note>
+  Start conditions for Flows are very similar to those for Triggers. You can think of a Flow as a more advanced, multi-step "action" that a simple Trigger might initiate.
+</Note>
 
----
+<Frame>
+  ![Flows Conditions Pn](/images/Flows_conditions.png)
+</Frame>
 
-## Roadmap Insights
+### 2. **Modular Blocks: Designing the Conversation Path**
 
-Coming soon to Flows:
+Once a Flow starts, you connect various modular blocks to create the desired user journey. These blocks represent different actions or interactions.
 
-- Time delays and wait steps (e.g., "Wait 5 min before follow-up")
-- Variables and templating inside replies
-- Conditional looping and retry logic
-- Previewing AI decisions inside a flow test
+<AccordionGroup>
+  <Accordion title="Send Message">
+    This block allows the Flow to send a message to the visitor.
 
----
+    **Options:** Text, rich reply (with buttons), image, or quick reply options.
+  </Accordion>
+  <Accordion title="Ask a Question (via bubbles)">
+    This block sends a message and then pauses the Flow, waiting for a user reply to proceed. Useful for gathering specific input.
+  </Accordion>
+  <Accordion title="Send Form">
+    Present a predefined form to the visitor. This can be used to set or update a profile field based on the collected conversation data.
+  </Accordion>
+  <Accordion title="Assign Aura AI">
+    Directs the conversation to Aura AI, allowing the AI agent to handle the next set of user queries based on its knowledge.
+  </Accordion>
+  <Accordion title="Send Data Update">
+    Push user-provided data or other information collected in the Flow to an external system via an API call (e.g., update a CRM record). Requires a configured [Data Update](https://www.google.com/search?q=/advanced-topics/data-requests-updates%23data-updates-post-put) endpoint.
+  </Accordion>
+  <Accordion title="Branch Logic">
+    Create conditional branches in your Flow using `AND/OR` operators. This allows the Flow to take different paths based on visitor responses, profile data, or other criteria.
+  </Accordion>
+  <Accordion title="Tag Chat">
+    Automatically apply specific labels or tags to the chat based on user behavior or the outcome of the Flow. Useful for segmentation and reporting.
+  </Accordion>
+  <Accordion title="Escalate to Agent">
+    Routes the conversation to a human agent when certain conditions are met (e.g., if the user asks for human help, or if the Flow can't resolve the issue).
+  </Accordion>
+  <Accordion title="End Flow">
+    Cleanly stops the Flow once a desired outcome is met or the conversation concludes.
+  </Accordion>
+</AccordionGroup>
 
-## Next Steps
+<Frame>
+  ![Flows Example Pn](/images/Flows_example.png)
+</Frame>
 
-- [View Trigger Reference](/features/triggers)
-- [Learn about Aura AI Replies](/features/aura-ai-agent)
-- [Explore Data Requests](/features/integrations-and-extensions)
+## Designing Effective Flows: Use Cases & Strategy
+
+Flows empower you to automate complex interactions that go beyond simple trigger-response mechanisms.
+
+### Common Use Cases for Flows
+
+<CardGroup cols={2}>
+  <Card title="Lead Qualification & Nurturing" icon="user-check">
+    Build a multi-step conversation to ask qualifying questions (e.g., company size, pain points), collect contact info via forms, and then assign qualified leads to sales.
+  </Card>
+  <Card title="Automated Support Triage" icon="question">
+    Guide users through a series of questions to identify their issue, offer relevant KBA articles, and escalate to the correct department or agent if self-service isn't sufficient.
+  </Card>
+  <Card title="Feedback Collection" icon="star">
+    After a support interaction or a successful purchase, trigger a Flow to ask for feedback, collect ratings, and identify areas for improvement.
+  </Card>
+  <Card title="Appointment Scheduling" icon="calendar">
+    Combined with Data Requests/Updates) Allow users to book meetings or appointments directly within the chat by collecting necessary details and updating an external calendar system.
+  </Card>
+  <Card title="Customer Onboarding & Feature Adoption" icon="person-walking-arrow-loop-left">
+    Create interactive tours or mini-onboarding sequences. Ask users about their goals, provide quick tips, and direct them to relevant features or documentation.
+  </Card>
+</CardGroup>
+
+## Managing & Testing Flows
+
+- **Status Toggle:** Easily activate or deactivate Flows without deleting them.
+- **Flow Performance Analytics (Coming Soon):** Gain insights into how your Flows are performing, including completion rates, drop-off points, and escalation rates.
+- **Virtual Visitor:** Thoroughly test your Flows in a sandbox environment using the [Virtual Visitor](/Features/VirtualVisitor) to ensure they behave as expected before going live. This is crucial for complex flows.ù
+
+<Info>
+  We'll add flow testing within the same page soon\!
+</Info>
+
+## Best Practices for Building Robust Flows
+
+<Tip>
+  Follow these guidelines to create effective and user-friendly Flows:
+</Tip>
+
+<Steps>
+  <Step title="Map Out the Journey First">
+    Before building, sketch out the user's journey, decision points, and desired outcomes. This helps avoid getting lost in the visual builder.
+  </Step>
+  <Step title="Keep it Concise & Conversational">
+    Design messages that are easy to read and natural. Avoid overly long messages or too many questions at once.
+  </Step>
+  <Step title="Provide Clear Options">
+    When using "Ask a Question" or rich replies, give users clear, easy-to-understand options to guide them.
+  </Step>
+  <Step title="Design for Fallback & Escalation">
+    Always include `Escalate to Agent` blocks at points where the Flow might not be able to resolve an issue, ensuring a smooth handoff.
+  </Step>
+  <Step title="Utilize Branch Logic Smartly">
+    Use `Branch Logic` to personalize paths based on visitor input or known profile data, making the Flow more relevant.
+  </Step>
+  <Step title="Test Extensively with Virtual Visitor">
+    Simulate every possible path and user input. Test edge cases, incorrect inputs, and the escalation process to catch errors early.
+  </Step>
+  <Step title="Iterate & Optimize (with Analytics)">
+    Once Flow performance analytics are available, use them to identify bottlenecks, optimize conversation paths, and improve conversion rates.
+  </Step>
+</Steps>
+
+### Next Steps
+
+- [Learn About Aura AI](/Features/AuraAi) - _Understand how to assign conversations to your AI agent within a Flow._
+- [Configure Data Requests & Updates](/Advanced/DataRequest&Update) - _Integrate external system interactions into your Flows._
+- [Test Your Flows with Virtual Visitor](/Features/VirtualVisitor) - _Ensure your automated journeys work perfectly before deployment._

@@ -1,20 +1,108 @@
 ---
-title: "Aura AI"
-description: "Learn how Aura AI transforms customer conversations using contextual intelligence, external data sources, and smart fallback logic."
+title: "Aura AI: Your Intelligent Customer Engagement Agent"
+description: "Aura AI is more than just a chatbot; it's an intelligent agent capable of understanding user intent, accessing vast knowledge sources, and executing actions autonomously. By deploying Aura, you can offload repetitive queries, provide 24/7 support, and ensure your human agents focus on complex, high-value interactions."
 icon: "Sparkles"
 ---
 
-## Data Sources Aura Learns From
+## How Aura AI Works
 
-Aura is trained on the following sources:
+Aura AI operates by continuously learning and drawing information from various sources to provide accurate and relevant replies during a chat session.
 
-- **Chat History**: It continuously learns from past interactions during a session.
-- **Links & Articles**: Add URLs and internal articles to be parsed into its knowledge.
-- **Q&A Pairs**: Define direct question-answer examples.
-- **Company Settings**: Includes business name, timezone, contact rules, and language preferences.
-- **Data Fields**: All fields collected via forms or populated manually.
-- **Data Requests**: External API queries Aura can run when specific keywords are detected (e.g., "order status").
-- **Data Updates**: API calls to update records, triggered by user actions or AI interpretation.
+### 1. **Knowledge & Context Sources**
+
+Aura AI's intelligence is fueled by the data you provide. It leverages multiple sources to understand and respond to customer queries:
+
+<AccordionGroup>
+  <Accordion title="Chat History">
+    Aura learns from the ongoing conversation, retaining context from past interactions within the current session. This allows it to personalize responses and avoid asking redundant questions.
+  </Accordion>
+  <Accordion title="Links & Articles (Web Scraping)" icon="sparkles">
+    Provide Aura with URLs to your website pages, documentation, or public articles. Aura can parse these pages (via web scraping) and use their content as a knowledge base for answering questions.
+  </Accordion>
+  <Accordion title="Q&A Pairs">
+    Define direct question-answer examples for common queries. This provides a precise and reliable way for Aura to respond to frequently asked questions.
+  </Accordion>
+  <Accordion title="Company Settings">
+    Aura integrates key details from your Emplorium workspace settings, such as your business name, timezone, general contact rules, and language preferences, to provide contextually accurate information.
+  </Accordion>
+  <Accordion title="Data Fields">
+    Aura can access all data fields collected via forms in Flows or populated manually by agents. This allows it to reference specific customer information (e.g., "What's my order status?") if integrated with external systems.
+  </Accordion>
+  <Accordion title="Data Requests (External API Queries)">
+    Configure Aura to run external API queries when specific keywords or intents are detected (e.g., "order status," "shipping update"). This allows Aura to fetch real-time information from your backend systems.
+
+    <Tip>
+      Learn more about setting up these API queries in [Data Requests GET](/Advanced/DataRequest&Update)
+    </Tip>
+  </Accordion>
+  <Accordion title="Data Updates (External API Calls)">
+    Aura can be configured to trigger API calls to update external records or systems. These can be initiated by user actions or Aura's interpretation of the conversation (e.g., "update my contact info")
+
+    <Tip>
+      Learn more about setting up these API updates in [Data Updates POST/PUT](/Advanced/DataRequest&Update)
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### 2. **Aura AI in Action During a Chat**
+
+When Aura is configured through a [**Flow**](/Features/Flows)** **it'll be assigned to the visitor every time the flow condition is met. For exmaple:
+
+<Steps>
+  <Step title="User Message Received (Flow Condition)">
+    A user sends a message through the Emplorium Chat Widget.
+  </Step>
+  <Step title="Aura Matches Intent / Keyword">
+    Aura processes the message to understand the user's intent or detect specific keywords: 
+
+    - If a direct match is found in your **Q&amp;A pairs**, Aura provides the defined answer_._
+    - If a match is found with a **keyword-based data request**, Aura fetches the external information (e.g., order details).
+    - If the query is ambiguous, unknown, or not a direct match, Aura applies its **fallback logic**.
+  </Step>
+  <Step title="Contextual Memory">
+    Throughout the session, Aura retains context from previously submitted fields, referenced articles, and the message trail, ensuring continuity in the conversation.
+  </Step>
+  <Step title="Escalation or Follow-Up">
+    If Aura cannot confidently answer after multiple attempts or if specific escalation rules are met, it will tag the message with `#fallback` and follow configured escalation rules.
+  </Step>
+</Steps>
+
+## Configuring Aura AI
+
+You can personalize Aura AI's behavior, tone, and escalation rules to align with your brand and support strategy.
+
+### General Settings & Persona
+
+- **Tone & Style:** Define Aura's conversational tone (e.g., formal, friendly, empathetic).
+- **Guardrails:** Set boundaries and content restrictions to ensure Aura's responses remain appropriate and on-brand.
+- **Follow-ups:** Configure Aura to ask follow-up questions to clarify intent or gather more information.
+- **Memory:** Ensure Aura maintains context throughout the conversation to provide more personalized and relevant responses.
+- **Adherence to Content Restrictions & Safe Mode:** Aura is designed to respect defined content boundaries and can operate in a "safe mode" to minimize unapproved responses.
+
+### Fallback & Escalation Handling
+
+Crucially, Aura AI includes robust mechanisms for when it cannot confidently respond, ensuring customers are never left without assistance.
+
+<Steps>
+  <Step title="Unanswered Count Tracking">
+    You can configure Aura to track the number of `#fallback`-tagged messages that occur within a single session.
+  </Step>
+  <Step title="Agent Escalation">
+    After a configurable number (X) of fallbacks, Aura can be set to automatically prompt the user with options like: _"That didn't help? Let me connect you with a person." _  "Would you like to talk to a support agent?" This can seamlessly integrate with the **Escalate to Agent** block in your Flows.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Aura Configuration Pn](/images/Aura_Configuration.png)
+</Frame>
+
+## The Aura AI Playground
+
+The **Playground tab** in Aura AI configuration (or a dedicated Playground app) allows your team to test Aura's responses and behavior in a sandbox environment before deploying it live in a Flow or directly to your widget.
+
+- **Test Responses:** Input queries and see how Aura replies based on its current knowledge base.
+- **Debug Data Requests:** Verify that Aura correctly triggers and processes external API calls.
+- **Simulate Scenarios:** Test different conversation paths and escalation scenarios.
 
 <Frame>
   ![Playground Default State Pn](/images/Playground-DefaultState.png)
@@ -22,84 +110,46 @@ Aura is trained on the following sources:
 
 ---
 
-## How It Works During a Chat
+## Key Benefits of Aura AI
 
-1. **User Message Received**
-2. **Aura Matches Intent / Keyword**
-   - If match found in Q&A, it replies.
-   - If match found in keyword-based data request, it fetches external info.
-   - If ambiguous or unknown, it applies fallback logic.
-3. **Contextual Memory**
-   - Retains session context (fields submitted, articles referenced, message trail).
-4. **Escalation or Follow-Up**
-   - If answer not found after multiple replies, it tags the message with `#fallback` and follows escalation rules.
+- **24/7 Availability:** Provide instant support around the clock, even outside business hours.
+- **Reduced Agent Workload:** Automate responses to common questions, freeing up human agents for more complex issues.
+- **Consistent Information:** Ensure customers receive accurate and consistent answers every time.
+- **Faster Resolution Times:** Many queries can be resolved instantly by Aura, leading to higher customer satisfaction.
+- **Scalability:** Effortlessly handle increased conversation volumes without needing to proportionally increase your human support team.
+- **Data-Driven Improvement:** Aura continuously learns from interactions, and its fallback metrics provide valuable insights for refining your knowledge base.
 
 ---
 
-## Fallback & Escalation Handling
+## Best Practices for Deploying Aura AI
 
-- **Fallback Tags**: When Aura cannot confidently respond, it tags the message with `#fallback`.
-- **Unanswered Count Tracking**: You can configure Aura to count how many fallback-tagged messages occur per session.
-- **Agent Escalation**: After X fallbacks, Aura prompts the user with options like:
-  - "Talk to a person"
-  - "That didn't help? Let me connect you."
-
-<Frame>
-  ![Aura Configuration Pn](/images/Aura_Configuration.png)
-</Frame>
-
----
-
-## Visibility Settings
-
-You can control how Aura behaves per route or page:
-
-- **Auto Visible on Load**
-- **Delay Appearance**
-- **Visible Only When Triggered**
-- **Hidden on Specific URLs**
-
-<Note>
-  \*\*Use case example: \*\*Hide Aura during checkout or onboarding flows.
-</Note>
-
----
-
-## Best Practices
-
-- Regularly update linked articles and Q&A pairs.
-- Keep API responses fast—Aura expects responses under 3 seconds.
-- Use fallback tracking to identify gaps in knowledge.
-- Train with real customer queries via the chat history tool.
-
----
-
-## Roadmap (What’s Coming Next)
+<Tip>
+  Maximize Aura AI's effectiveness with these strategic approaches:
+</Tip>
 
 <Steps>
-  <Step title="Multi-language fallback training">
-    
+  <Step title="Start with High-Volume FAQs">
+    Begin by training Aura on your most frequently asked questions. This provides immediate value and reduces agent burden.
   </Step>
-  <Step title="Live memory inspection for debugging">
-    
+  <Step title="Provide Diverse Knowledge Sources">
+    Utilize a mix of Q&A pairs for precision, and links/articles for broader contextual understanding.
   </Step>
-  <Step title="Personalized summaries at session end">
-    
+  <Step title="Clearly Define Fallback Rules">
+    Ensure a clear path to a human agent when Aura can't help. A frustrated customer is worse than no automation.
   </Step>
-  <Step title="Automated tagging based on sentiment">
-    
+  <Step title="Iterate & Monitor">
+    Regularly review Aura's performance, especially its `#fallback` rates. Use these insights to identify gaps in its knowledge and continuously refine its training data.
   </Step>
-  <Step title="Time-based triggers for proactive outreach">
-    
+  <Step title="Test in Playground Religiously">
+    Before pushing any major changes to Aura's knowledge base or integrations, thoroughly test in the Playground to prevent unexpected behavior in live chat.
+  </Step>
+  <Step title="Educate Your Agents">
+    Train your human agents on how Aura works, when it escalates, and how they can leverage its assistance (e.g., using suggested replies).
   </Step>
 </Steps>
 
----
+### Next Steps
 
-## Related Pages
-
-- [Data Requests](/features/integrations-and-extensions)
-- [Flow Builder](/features/flows)
-- [Trigger Conditions](/features/triggers)
-- [Fallback Rules](/configuration/routing-rules)
-- [Visibility Settings](/configuration/chat-widget)
+- [Define your Aura AI's Knowledge Base (KBAs & Q&A)](/Features/KBAs)
+- [Configure Data Requests & Updates](/Advanced/DataRequest&Update) - _Integrate Aura with your backend systems._
+- [Test Aura AI with Virtual Visitor](/Features/VirtualVisitor) - _Ensure your AI agent performs as expected in real-world scenarios._

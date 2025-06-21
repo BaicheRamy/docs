@@ -1,102 +1,176 @@
 ---
-title: "Chat Widget Overview"
-description: "Discover everything about the Emplorium Chat Widget – how it works, how to customize it, and how it enhances user interactions across platforms."
+description: "The Emplorium Chat Widget is your embeddable gateway, allowing visitors on your website or application to communicate seamlessly with your team or Aura AI. It provides a real-time, customizable, and intelligent bridge between your customers and your business, designed to simplify support, boost sales, and enhance overall user experience."
 icon: "Comment-dots"
+title: "Chat Widget Overview: Your Customer's Direct Line to Support"
 ---
 
-## What is the Emplorium Chat Widget?
+## What Makes Our Chat Widget Stand Out?
 
-The Emplorium Chat Widget is an embeddable interface that allows visitors on your website or application to communicate with your team in real time. It provides a seamless bridge between your customers and your support, sales, or AI agent (Aura). Built for flexibility and ease of use, it supports deep customization, AI integration, and multi-device responsiveness.
+The Emplorium Chat Widget is built for flexibility, deep customization, and smart automation, making it an indispensable tool for customer engagement.
 
 ## Key Features
 
-### 1. **Real-Time Messaging**
+<CardGroup cols={2}>
+  <Card title="Real-Time Messaging" icon="comments">
+    Enable instant, live communication with support for rich text, file attachments (images, documents), and clickable links. Includes typing indicators, delivery, and read receipts for a fluid conversation experience.
+  </Card>
+  <Card title="AI-Powered Assistance (Aura AI)" icon="robot">
+    Integrate Aura AI to autonomously respond to common queries, detect user intent, perform data requests, and smartly escalate to human agents when needed. Aura is trained on your knowledge base, Q&amp;A, and more.
+  </Card>
+</CardGroup>
 
-- Supports rich text, attachments (images, files), and links.
-- Instant delivery indicators (sent, delivered, seen).
-- Supports multi-language communication (configurable per account).
+<CardGroup cols={2}>
+  <Card title="Highly Customizable Design" icon="palette">
+    Tailor every aspect of the widget's appearance to match your brand. Modify colors, welcome messages, button styles, and choose between light/dark modes. Control its display on desktop vs. mobile.
+  </Card>
+  <Card title="Smart Availability Handling" icon="business-time">
+    Define custom online/offline messages, hide/show the widget outside business hours, or redirect visitors to contact forms when your team is unavailable.
+  </Card>
+</CardGroup>
 
-### 2. **AI-Powered Assistance (Aura AI)**
+<CardGroup cols={2}>
+  <Card title="Integrated Chat Forms" icon="wpforms">
+    Capture essential user details (e.g., name, email, query type) using pre-chat forms or send dynamic forms mid-conversation to gather specific data. Form responses automatically update visitor profiles.
+  </Card>
+  <Card title="Proactive Triggered Messages" icon="bolt">
+    Engage visitors proactively by launching automated messages based on their behavior (e.g., time on page, scroll depth, specific URLs visited). Messages can include interactive buttons or direct actions.
+  </Card>
+</CardGroup>
 
-- AI agent can respond autonomously to user queries.
-- Trained via documents, Q&A, data fields, APIs, and company settings.
-- Auto-detects user intent and performs actions (like sending data requests or updates).
-- Supports fallback and escalation to live agents.
+## Installation & Integration
 
-### 3. **Customizable Design**
+Integrating the Emplorium Chat Widget into your website or application is straightforward. We offer flexible options to suit your technical setup:
 
-- Modify widget colors, welcome messages, language, default agent avatar, and widget position.
-- Display options for mobile vs. desktop.
-- Light and dark mode compatibility.
+### Supported Installation Methods
+
+- **Raw HTML / Embed Script:** The quickest way to get started. Simply paste a small JavaScript embed script before the `</body>` tag of your website.
+- **SDK Integrations:** For developers working with modern frameworks, our SDK provides robust integration for:
+  - React
+  - Angular
+  - Vue
+  - Next.js
+- **CMS & eCommerce Platforms:** Compatible with popular platforms like:
+  - WordPress
+  - Shopify
+  - Wix
+  - Webflow
+  - Framer
+
+<Tip>
+  For detailed, step-by-step instructions, visit our dedicated [Installation & Integration Guide](/InstallationIntegration).
+</Tip>
+
+<Frame>
+  ![Integration Pn](/images/integration.png)
+</Frame>
+
+## Customizing Your Widget's Appearance & Behavior
+
+The Emplorium Chat Widget is fully configurable from your dashboard, allowing you to control its look, feel, and functionality without writing any code.
+
+### 1. **Visual Customization**
+
+Access these settings in: `Settings > Chat Settings > Chat Widget`
 
 <Frame>
   ![Chat Widget Pn](/images/ChatWidget.png)
 </Frame>
 
-### 4. **Availability Handling**
+<Tabs>
+  <Tab title="General Appearance">
+    - **Widget Theme:** Choose between `Light` or `Dark` mode.  
+    - **Widget Logo:** Upload your company logo to appear within the widget.  
+    - **Widget Background Color:** Set a custom background color to match your brand.  
+    - **Widget Corners (Radius):** Adjust the roundness of the widget's corners.  
+    - **Main Button Color:** Customize the color of the primary chat button. 
+    - **Button Corners (Radius):** Adjust the roundness of the main chat button's corners. 
+  </Tab>
+  <Tab title="Content & Branding">
+    - **Welcome Text:** The main greeting displayed when a visitor opens the widget.  
+    - **Welcome Description:** A secondary, more detailed welcome message.  
+    - **Main Button Text:** Customize the call-to-action text for initiating a chat (default: "Send us a Message").  
+    - **Show Agent Avatars:** Toggle whether to display avatars of your agents on the widget's home page.  
+    - **Show Agent Names:** Toggle whether to display agent names alongside their avatars. 
+    - **Show Footer "Powered by Emplorium":** Option to hide or show our branding.
+  </Tab>
+  <Tab title="Widget Pages">
+    Control which internal pages of the widget are accessible to your visitors:  
 
-- Custom online/offline messages.
-- Hide or show the widget outside business hours.
-- Option to show away message or redirect to other contact methods.
+    - **Show Home Page:** (Always On) Displays the greeting, CTA, and useful articles.  
+    - **Show Messages Page:** (Always On) Allows visitors to view past conversations and start new ones.
+    - **Show Articles Page:** Toggle this `On` or `Off` to enable or disable direct access to your Knowledge Base Articles within the widget.
+  </Tab>
+</Tabs>
 
-### 5. **Chat Forms**
+### 2. **Behavioral Customization**
 
-- Use pre-chat or mid-conversation forms to capture user details (e.g., name, email, topic).
-- Create forms directly from the widget settings panel.
-- Form responses update the user profile automatically.
+<Note>
+  To be added\!
+</Note>
 
-### 6. **Triggered Messages**
+Control the widget's presence and how it prompts visitors.
 
-- Launch proactive messages based on user behavior (e.g., time on page, scroll depth, URL visited).
-- Messages can include buttons or redirect actions.
+- **Show/Hide Rules:** Define when the widget should appear based on visitor actions or page URLs (often managed via **Triggers**).
+- **Delay Settings:** Configure a delay (e.g., 5 seconds) before the widget appears on a page to avoid immediately interrupting visitors.
+- **Re-open Rules:** Set how the widget behaves if a visitor closes it and then navigates to another page or returns to your site.
 
-<Frame>
-  ![Trigger Pn](/images/trigger.png)
-</Frame>
+<Note>
+  While some basic display rules are in Widget Settings, advanced behavioral control (like proactive messages based on user actions) is primarily configured within the [Triggers](/Features/Triggers) feature.
+</Note>
 
-### 7. **Multi-Channel Sync**
+## How Visitors Interact with the Widget
 
-- Centralized display of messages from different channels (email, website, API chats).
-- User context maintained across conversations.
+When a visitor lands on your website, the Emplorium Chat Widget provides an intuitive user experience:
 
-### 8. **Session Management**
+<Steps>
+  <Step title="Initial State (Minimized)">
+    By default, the widget appears minimized on your website (unless you've configured it to open automatically via a trigger). Its branding and initial appearance are controlled by your widget settings.
+  </Step>
+  <Step title="Opening the Widget">
+    Visitors click the widget icon to expand it. They are greeted by your customized welcome message and presented with options like "Send us a Message" or Browse "Useful Articles"
+  </Step>
+  <Step title="Engaging with Content">
+    From the expanded widget, visitors can: 
 
-- Conversations persist across sessions if cookies/localStorage is preserved.
-- Optional reset after inactivity period (customizable).
-
-## Installation Options
-
-You can install the chat widget on any major platform or framework:
-
-- Raw HTML (embed script before `</body>` tag)
-- React / Angular / Vue / Next.js via SDK
-- CMS & eCommerce platforms (WordPress, Shopify, Wix, Webflow, Framer)
-
-Visit the [Installation & Integration Guide](/installation/integration) for step-by-step setup.
-
-## How Users See the Widget
-
-- On load, the widget is minimized by default (unless set to open automatically).
-- Branding and first-message appearance is controlled via settings.
-- Users can reply to previous conversations, start a new one, or interact with Aura.
-
-## Use Cases
-
-- **Customer Support**: Offer quick help and resolve issues in real time.
-- **Lead Qualification**: Use forms and AI to identify high-intent visitors.
-- **Onboarding Guidance**: Trigger messages to guide users through your product.
-
-## Best Practices
-
-- Keep the welcome message warm and brief.
-- Enable Aura for 24/7 coverage, especially during non-business hours.
-- Customize form fields to reduce friction.
-- Use triggers smartly—don’t overwhelm visitors.
+    - **Start a New Conversation:** Initiate a chat with your team or Aura AI.  
+    - **View Old Messages:** Access their historical chat conversations with your business.  
+    - **Browse Articles:** Navigate through your Knowledge Base categories or search for specific information.  
+    - **Interact with Aura AI:** Engage with your AI agent for instant answers.
+  </Step>
+  <Step title="Seamless Conversation">
+    Once a chat begins, visitors experience real-time messaging with rich media support. If Aura AI is enabled, it provides instant replies, escalating to a human agent if needed.
+  </Step>
+</Steps>
 
 ---
 
+### Multi-Channel Sync & Session Management
+
+- **User Context:** Emplorium maintains user context across conversations, ensuring that if a visitor returns, their previous chat history is available (provided cookies/localStorage are preserved).
+- **Session Persistence:** Conversations persist across sessions, allowing visitors to pick up where they left off. You can configure optional reset rules after a period of inactivity.
+
+### Key Use Cases for Your Emplorium Widget
+
+The Emplorium Chat Widget can be leveraged across various departments to drive engagement and efficiency:
+
+- **Customer Support:** Offer real-time assistance, resolve issues quickly, and provide 24/7 coverage with Aura AI.
+- **Lead Qualification & Sales:** Proactively engage high-intent visitors, collect lead details using forms, and qualify prospects before handing off to sales agents.
+- **Onboarding & Product Guidance:** Use proactive messages and flows to guide new users through your product, answer common questions, and reduce churn.
+- **Feedback Collection:** Deploy forms or direct questions to gather user feedback on features, content, or overall experience.
+
+## Best Practices for Widget Deployment
+
+<Tip>
+  Maximize the effectiveness of your Emplorium Chat Widget with these recommendations:
+</Tip>
+
+- **Warm & Brief Welcome:** Keep your initial welcome message inviting and concise to encourage interaction.
+- **24/7 AI Coverage:** Enable **Aura AI** to provide instant responses, especially outside business hours, ensuring continuous support.
+- **Optimize Chat Forms:** Design pre-chat and in-chat forms carefully. Only ask for essential information to reduce friction and improve completion rates.
+- **Strategic Trigger Usage:** Deploy proactive messages and triggers thoughtfully. Avoid overwhelming visitors with too many pop-ups or messages.
+- **Regular Review:** Periodically review your widget's performance, A/B test welcome messages, and update KBA suggestions to keep content fresh and relevant.
+
 ### Next Steps
 
-- [Configure Your Widget Settings](/settings/widget)
 - [Create Triggers & Proactive Messages](/features/triggers)
 - [Enable Aura for Smart Replies](/features/aura-ai-agent)

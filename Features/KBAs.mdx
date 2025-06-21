@@ -1,111 +1,134 @@
 ---
-title: "Knowledge Base Articles"
-description: "Learn how to build and optimize your Knowledge Base inside Emplorium to support instant AI answers and user self-service."
+title: "Knowledge Base Articles (KBAs): Empowering Self-Service and AI"
+description: "A well-structured Knowledge Base (KB) is fundamental for efficient customer engagement. It reduces inbound support requests, improves customer satisfaction through instant answers, and provides a powerful, always-available data source for your Aura AI to deliver intelligent responses."
 icon: "book"
 ---
 
-## Overview
+## What are Emplorium Knowledge Base Articles (KBAs)?
 
-Emplorium's **Knowledge Base** allows you to create a centralized hub of help articles, FAQs, and documentation that can be:
+KBAs are your centralized repository of information about your product, services, and common questions. They are designed to be easily accessible by your customers through the chat widget and are automatically utilized by Aura AI to answer queries.
 
-- Referenced by the Aura AI Agent for instant support responses
-- Indexed by the search box in your live chat widget
-- Organized into categories for user browsing
+## Creating & Managing KBAs
 
-Knowledge Articles are essential to power **AI understanding**, reduce agent workload, and improve customer satisfaction.
+Emplorium provides an intuitive interface for creating and organizing your knowledge content.
 
-## How It Works
+### 1. **Structuring Your Knowledge Base**
 
-Knowledge Base content is used by Emplorium in the following ways:
+KBAs are organized into **Categories** for easy navigation and management.
 
-- **AI Training Source**: Aura AI reads all published articles and uses their contents to formulate answers when users ask related questions.
-- **Searchable Widget**: Visitors can search articles from the chat widget interface.
-- **Team Resource**: Agents can link and send articles directly in conversations.
+<Steps>
+  <Step title="Create Categories">
+    Before writing articles, create logical categories to group related content. Examples include "Getting Started," "Troubleshooting," "Billing," or "Features."
 
-<Frame>
-  ![AI KBA Pn](/images/AI_KBA.png)
-</Frame>
+    Navigation: `KBA > Categories tab > Add New Category`
 
-## Creating Articles
+    <Frame>
+      ![Create Category Pn](/images/create_category.png)
+    </Frame>
+  </Step>
+  <Step title="Add New Article">
+    Once categories are set up, you can start creating individual articles.
 
-To add a new article:
+    - **Title & Content:** Provide a clear, concise title and rich-formatted content for your article.
+    - **Category Assignment:** Assign the article to one or more relevant categories.
+    - **Publishing Status:** Set the article as `Draft` or `Published`. Only `Published` articles are visible to customers and can be used by Aura AI.
 
-1. Go to **Knowledge Base → Articles**
-2. Click **New Article**
-3. Fill out the following fields:
-   - **Title**: Clear, concise summary of the topic.
-   - **Slug**: URL-friendly version of the title (auto-generated or manual).
-   - **Category**: Assign it to a relevant category.
-   - **Body**: Use rich text editor to structure content with headings, lists, images, and links.
-   - **Visibility**: Mark as **Published** to enable use in live widget and AI.
+    Navigation: `KBA > Articles tab > Add New Article`
+  </Step>
+</Steps>
+
+### 2. **Rich Content Formatting**
+
+Emplorium's KBA editor supports rich formatting to make your articles clear and easy to read.
+
+- **Text Formatting:** Bold, italic, underline, strikethrough.
+- **Headings:** H1, H2, H3 for clear sectioning.
+- **Lists:** Unordered and numbered lists.
+- **Blockquotes:** For highlighting important text.
+- **Media:** Embed images directly into your articles.
+- **Links:** Add hyperlinks to external resources or other KBAs.
 
 <Frame>
   ![New Kba Pn](/images/new_kba.png)
 </Frame>
 
-### Supported Content Features:
+## How KBAs Empower Your Business
 
-- Text formatting (bold, italic, headings)
-- Lists (ordered, unordered)
-- Images
-- Code blocks
-- Hyperlinks
-- Embedded media (optional)
+KBAs serve multiple critical functions within the Emplorium platform, benefiting both your customers and your team.
 
-## Article Categories
+### 1. **Customer Self-Service (via Chat Widget)**
 
-To keep your articles organized:
+Your published KBAs are directly accessible to visitors through the Emplorium Chat Widget, enabling them to find answers independently.
 
-- Navigate to **Knowledge Base → Categories**
-- Click **New Category**
-- Provide a name and optionally an icon or color for UI clarity
+- **Dedicated Articles Page:** The widget has an "Articles" page where users can browse articles by category, search for specific topics, and even rate articles as "Helpful" or "Not Helpful." \<br/\> #include_picture_of_widget_articles_page
+- **Reduced Support Volume:** By empowering self-service, you significantly reduce the number of common questions reaching your support agents.
 
-Categories are displayed in:
+### 2. **Fueling Aura AI's Knowledge**
 
-- Your live widget’s article view
-- Admin dashboard
-- AI’s reference logic
+KBAs are a primary source of information for your Aura AI agent, allowing it to provide intelligent and contextual responses.
 
-## Sync with AI Assistant
+- **Contextual Replies:** Aura can parse the content of your KBAs and use this information to answer visitor questions directly, even if the exact phrasing isn't in your Q&A pairs.
+- **KBA Suggestions for Agents:** Within the Inbox, agents have a "KBA Suggestions" tab in the right panel. This lists relevant public articles based on the current conversation, allowing agents to quickly reference or `Suggest Article` directly to the visitor. \<br/\> #include_picture_of_kba_suggestions_in_inbox
 
-Aura AI automatically ingests all **published articles**. There is no need for manual syncing.
-
-- Any update to an article will reflect in the AI’s responses.
-- You can test AI understanding by interacting with the chat as a visitor.
-- If needed, trigger re-training manually from **Settings → AI Assistant**.
-
-## Visibility and Permissions
-
-You can control article access using visibility toggles:
-
-- **Published**: Available to AI and public visitors
-- **Unpublished**: Hidden from both AI and front-end search
-- Articles remain editable regardless of status
+<Frame>
+  ![AI KBA Pn](/images/AI_KBA.png)
+</Frame>
 
 <Note>
   Note: You must give Aura access to this article via Aura Knowledge Page\!
 </Note>
 
-## Suggested Use Cases
+### 3. **Internal Team Reference**
 
-- Onboarding Guides
-- Troubleshooting FAQs
-- Product Feature Walkthroughs
-- Policy & Billing Explanations
-- External Integrations Setup
+KBAs also serve as a centralized, consistent knowledge base for your internal support team, ensuring everyone provides accurate information.
 
-## Best Practices
+## Monitoring KBA Performance (Analytics)
 
-- Keep titles short and clear
-- Add images or screenshots for visual aid
-- Break down steps in numbered lists
-- Link to related articles for navigation
-- Regularly update content to reflect product changes
+Emplorium provides quick analytics for your KBAs to help you understand their effectiveness:
+
+- **Views:** Track how often each article is viewed by customers.
+- **Likes/Dislikes:** See how users rate the helpfulness of your articles. This feedback is crucial for identifying areas for improvement.
+
+<Frame>
+  ![KBA Analytics Pn](/images/KBAAnalytics.png)
+</Frame>
+
+---
+
+## Best Practices for a Powerful Knowledge Base
+
+<Tip>
+  Follow these guidelines to create a comprehensive and effective Knowledge Base:
+</Tip>
+
+<Steps>
+  <Step title="Keep Articles Concise & Focused">
+    Each article should address a single topic or answer a specific question. Break down complex subjects into smaller, digestible pieces.
+  </Step>
+  <Step title="Use Clear & Simple Language">
+    Avoid jargon. Write in a way that your average customer can easily understand.
+  </Step>
+  <Step title="Utilize Formatting Effectively">
+    Use headings, lists, bold text, and images to break up content and improve readability.
+  </Step>
+  <Step title="Prioritize Based on FAQs">
+    Start by creating articles for your most frequently asked questions and common support issues. This will have the biggest impact on reducing support volume.
+  </Step>
+  <Step title="Regularly Update Content">
+    Products and policies change. Review your KBAs regularly to ensure accuracy and relevance. Archive outdated articles.
+  </Step>
+  <Step title="Monitor Analytics & Feedback">
+    Pay attention to article views and helpfulness ratings. Articles with high views and low helpfulness might need to be rewritten or expanded.
+  </Step>
+  <Step title="Encourage Agent Contribution">
+    Your support agents are on the front lines and know what customers are asking. Encourage them to contribute to the KBA or flag gaps in content.
+  </Step>
+</Steps>
 
 ---
 
 ### Next Steps
 
-- [Create a New Article](/knowledge-base/articles)
-- [Train Aura AI](/features/aura-ai-agent)
-- [Customize Widget Behavior](/features/chat-widget)
+- [Optimize Aura AI's Knowledge Sources](/Features/AuraAi) - _Ensure your KBAs are properly linked for Aura's training._
+- [Customize Your Chat Widget](/Features/ChatWidget) - _Control whether your Articles page is visible to visitors in the widget._
+- [Review Dashboard Overview](/Overview/DashboardWalkthrough) - _See how KBA views contribute to overall engagement metrics._

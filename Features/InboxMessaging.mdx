@@ -1,76 +1,193 @@
 ---
-title: "Inbox"
-description: "Explore how Emplorium's unified inbox works, its powerful messaging capabilities, and all features designed to streamline customer communication."
+title: "Inbox: Your Command Center for Customer Conversations"
+description: "Emplorium's Inbox is designed to simplify and enhance communication with your customers. It's a unified workspace where you manage live chats, collaborate with your team, and leverage powerful automation and AI capabilities to deliver exceptional support."
 icon: "inbox"
 ---
 
-## Inbox Layout & Interface
+## Inbox Layout & Interface Overview
 
-The Inbox is divided into:
-
-### 1. **Sidebar (Left)**
-
-- **Filters**: View messages by status (e.g., Open, Assigned, Resolved)
-- **Team Views**: Shared folders by team or use-case
-- **Search & Tags**: Quickly find conversations by tags, keywords, or customer fields
-
-### 2. **Conversation Feed (Center)**
-
-- Chronologically ordered list of all active conversations
-- Quick preview of last message, time, and assignment
-- Unread indicators and status badges
-
-### 3. **Message Panel (Right)**
-
-- Full thread view with customer messages, agent replies, bot actions, and internal notes
-- Action bar for responding, assigning, tagging, and performing quick actions
+The Emplorium Inbox is intuitively structured into three main panels, giving you a comprehensive view of your customer interactions:
 
 <Frame>
   ![Messages Default Pn](/images/messages_default.png)
 </Frame>
 
+### 1. **Conversations List (Left Panel)**
+
+This panel provides an organized overview of all your customer and internal team conversations.
+
+<AccordionGroup>
+  <Accordion title="Visitors Tab">
+    This tab displays all conversations you have with visitors, including those you've picked up, or those routed to your department awaiting assignment.
+
+    <br />
+
+    - "**Pending Messages**": Conversations that are awaiting an agent's response or assignment.
+    - "**Direct Messages**": Conversations where you are actively engaged as an assignee.
+  </Accordion>
+  <Accordion title="Agents Tab">
+    This tab manages your internal team communications.
+
+    <br />
+
+    - **Private Conversations**: One-on-one chats with other agents.
+    - **Group Conversations**: Discussions involving multiple agents. You can start a new private/group conversation from this tab.
+  </Accordion>
+</AccordionGroup>
+
+- **Search Bar:** Quickly find specific conversations by visitor name, keywords, or conversation ID.
+- **Filters:** Apply filters to narrow down conversations by status (e.g., Open, Assigned, Resolved), agent, or department.
+
+<Frame>
+  ![Messages Left Panel Pn](/images/messages_left_panel.png)
+</Frame>
+
+### 2. **Active Conversation (Middle Panel)**
+
+This is where real-time interactions unfold, displaying the full chat thread and enabling immediate responses.
+
+- **Conversation Header**: At the top, you'll see the visitor's name and their online status (indicating if they are still active on your website). For agent-to-agent chats, this displays the agent or group name.
+- **Action Bar (Top Right)**:
+  - <Icon icon="magnifying-glass" /> **Search in Conversation**: Find specific words or phrases within the current chat history.
+  - <Icon icon="arrow-right-arrow-left" /> **Transfer Visitor**: Re-route the conversation to another department or specific agent. A reason for transfer is required. Upon transfer, a message "Agent X transferred Chat" appears in the conversation, and previous agents automatically leave the chat.
+  - <Icon icon="user-plus" /> **Add Agent**: Invite another agent to the room, either publicly or privately (using "Comment mode").
+  - <Icon icon="circle-check" /> **Resolve Room**: Close the conversation, stating the reason for closure (e.g., Resolved, No Reply, Inappropriate, Unresolved, Other).
+  - <Icon icon="right-from-bracket" /> **Leave Room**: Exit the conversation. This action is only active if there's more than one agent in the room.
+  - <Icon icon="ban" /> **Ban Visitor**: Blocks the visitor's IP address, preventing further access to the chat widget. (Coming Soon: <Icon icon="phone" /> Audio Call & <Icon icon="video" /> Video Call - currently grayed out)
+- **Message Input Area**: This is where agents compose and send messages.
+  - **Text Input**: Type your messages here.
+  - **Actions**: Access <Icon icon="face-smile" /> Emojis, <Icon icon="image" /> GIFs, <Icon icon="paperclip" /> File Attachments, and <Icon icon="wpforms" /> Forms to send predefined forms to the visitor for data collection.
+  - **Send Button**: <Icon icon="paper-plane-top" /> Send your message.
+- **Additional Tools**:
+  - <Icon icon="reply-all" /> **Quick Responses**: Predefined sentences that can be inserted into the conversation. Typing a configured keybind (default: //) triggers a panel with all available quick responses.
+  - <Icon icon="comment" /> **Comment Mode**: Activate this toggle to send messages visible only to other agents within the visitor's chat thread, highlighted as a "`Comment`"
+
+<Frame>
+  ![Messages Middle Panel Pn](/images/messages_middle_panel.png)
+</Frame>
+
+### 3. **Visitor/Conversation Details (Right Panel)**
+
+This panel provides critical context about the active conversation or visitor, enhancing the agent's ability to provide personalized support.
+
+<Tabs>
+  <Tab title="Profile Tab">
+    This tab contains essential visitor details:
+
+    - **Visitor Details**: Includes the Department this room is assigned to, its Priority (set by an agent), and current Assignee(s).
+    - **Attributes**: A set of custom fields "added to profile" by agents via settings. By default, this includes the visitor's Name.
+    - **Visitor Data Device**: An expandable section showing additional visitor information such as Time on Site, Browser, Device Type (desktop/laptop), IP address, and Country.
+
+    <br />
+
+    <Frame>
+      ![Messages Right Panel 1 Pn](/images/messages_right_panel_1.png)
+    </Frame>
+  </Tab>
+  <Tab title="Browse History Tab">
+    This tab provides an audit log of the visitor's navigation within your integrated website, tracking the URLs they've visited.
+
+    <Frame>
+      ![Messages Right Panel 2 Pn](/images/messages_right_panel_2.png)
+    </Frame>
+    <br />
+  </Tab>
+  <Tab title="Previous Conversations Tab">
+    A list of all prior chats this specific visitor has had within the app.
+
+    <br />
+
+    Clicking on a previous conversation loads it into the center panel (the input area will be removed), allowing agents to search the conversation, view the closing reason, see agents involved, and review all past messages.
+
+    <Frame>
+      ![Messages Right Panel 3 Pn](/images/messages_right_panel_3.png)
+    </Frame>
+    <br />
+  </Tab>
+  <Tab title="Notes Tab">
+    Allows agents to leave internal notes about this specific user, visible only to other agents.
+
+    <Frame>
+      ![Messages Right Panel 4 Pn](/images/messages_right_panel_4.png)
+    </Frame>
+    <br />
+  </Tab>
+  <Tab title="KBA Suggestions Tab">
+    A list of public Knowledge Base Articles (KBAs) that can be easily searched. The "Suggest Article" action allows agents to directly send an article to the active conversation for reference.
+
+    <Frame>
+      ![Messages Right Panel 5 Pn](/images/messages_right_panel_5.png)
+    </Frame>
+    <br />
+  </Tab>
+</Tabs>
+
+### **Agent to Agent Conversation Details (Right Panel)**
+
+When viewing an agent-to-agent conversation, this panel lists all participants. Clicking on an agent's name opens their **Agent Card**, displaying their avatar, department, username, and full name, with an option to send a private message. Role and additional actions (like mention or transfer ownership in group chats) are also available.
+
 ---
 
 ## Core Messaging Features
 
-### Real-Time Chat
+Emplorium provides a rich set of features to ensure smooth and effective communication:
 
-- Bi-directional messaging between agents and visitors
-- Typing indicators, delivery/read receipts
-- File attachments, images, videos, links
-
-### Rich Media & Interactions
-
-- Support for buttons, cards, and quick replies
-- Structured form replies sent through chat
-- Suggested answers from Aura AI for faster replies
-
-### Notes & Collaboration
-
-- **Internal Notes**: Privately collaborate with teammates
-- **@Mentions**: Tag team members in conversations
-- **Conversation History**: View full message history across sessions
-
-### Message Enhancements
-
-- **Message Actions**: Mark as resolved, reopen, delete, or tag
-- **Time Stamp & Agent Identity**: Timestamped messages and agent avatars
-- **Visitor Info Sidebar**: Full view of visitor properties, past activity, and forms
+- **Real-Time Chat:** Bi-directional messaging between agents and visitors with typing indicators and delivery/read receipts for a fluid experience.
+- **Rich Media Support:** Send and receive file attachments, images, and links directly within the chat.
+- **Interactive Elements:** Utilize quick replies, rich cards, and predefined forms to gather structured information efficiently.
+- **Internal Collaboration:** Use **Comment mode** to privately discuss within visitor chats and **@Mentions** to tag teammates for specific attention.
+- **Comprehensive History:** Access the full message history across all visitor sessions, including agent replies and bot actions.
 
 ---
 
 ## Assignments & Routing
 
-Emplorium offers smart and manual conversation routing:
+Optimize agent workload and ensure timely responses with flexible chat routing options.
 
-- **Manual Assignment**: Agents can assign themselves or teammates
-- **Auto Assignment Rules**: Assign based on conditions such as tag, channel, visitor properties, or team load
-- **Unassigned Queue**: All incoming chats appear here until claimed
+- **Manual Assignment**: Agents can pick up unassigned chats or manually transfer them to specific teammates or departments using the <Icon icon="arrow-right-arrow-left" /> **Transfer Visitor** action.
+- **Automated Routing Rules (via Settings)**: Assign based on conditions such as tag, channel, visitor properties, or team load
+
+<Steps>
+  <Step title="Configure Chat Routing">
+    Define how incoming chats are distributed to your team in.
+
+    - **Assigned**: Automatically assigns incoming chats to a specific number of agents based on availability.
+    - **Broadcast**: Notifies all online agents, allowing them to claim chats from a shared queue.
+  </Step>
+  <Step title="Set Chat & Agent Limits">
+    In the same settings, define:
+
+    - **Chat Limit**: The maximum number of simultaneous chats an agent can receive.
+    - **Agent Limit**: The maximum number of agents assigned to a single chat (this remains 0 for Broadcast routing).
+  </Step>
+</Steps>
+
+<Frame>
+  ![Chat Routing and Limits Settings](https://mintlify.s3.us-west-1.amazonaws.com/emplorium/images/Routing__Limits.png)
+
+  Configure your chat routing and agent limits for optimal workload distribution.
+</Frame>
+
+---
+
+<Frame>
+  <img
+    src="https://mintlify.s3.us-west-1.amazonaws.com/emplorium/images/transfer_chat.png"
+    alt="Transfer Chat Interface"
+    title="Transfer Chat"
+    style={{ width:"100%" }}
+  />
+
+  The transfer chat modal allows agents to re-route conversations.
+</Frame>
+
+<Warning>
+  All visitor details (name, custom fields, conversation history, notes, department, tags) must be saved upon transfer. Any data loss indicates a critical failure.
+</Warning>
 
 <Frame>
   ![Routing Limits Pn](/images/Routing__Limits.png)
 </Frame>
-
 
 <Frame>
   <img
@@ -85,66 +202,112 @@ Emplorium offers smart and manual conversation routing:
 
 ## Tagging, Filtering & Organization
 
-- **Conversation Tags**: Add custom tags to group, filter, or trigger automation
-- **Saved Views**: Create custom views based on filters (e.g., VIP customers, untagged chats)
-- **Search Filters**: Advanced search by visitor name, email, channel, tag, date range
+Keep your inbox organized and actionable, improving reporting and workflow efficiency.
+
+- **Conversation Tags**: **Conversation Tags:** Apply custom tags to conversations (e.g., `#billing`, `#technical-issue`, `#vip-customer`). These tags are crucial for categorization, searchability, and powering automation..
+
+  <Tip>
+    Enable **Require Tags Before Closing Chat** in \*\*Settings \> Chat Settings \> Chat Tags \*\*to enforce consistent tagging across your team.
+  </Tip>
+- **Saved Views**: Create custom filtered views (e.g., "My Open Chats," "High Priority," "Sales Leads") for quick access to specific conversation sets.
+- **Search Filters**: Utilize powerful search options by visitor name, email, department, tag, and date range to quickly locate past conversations.
 
 ---
 
 ## Inbox Automation Features
 
-- **Smart Suggestions**: Aura AI offers contextual replies or actions
-- **Auto-Resolve Rules**: Auto-close conversations based on conditions (e.g., no reply after 24h)
-- **Canned Responses**: Prewritten replies with personalization fields
-- **Triggers**: Initiate workflows based on specific actions (e.g., “Assign to sales if contains pricing”)
+Leverage Emplorium's automation capabilities to streamline your workflows directly from the inbox.
+
+- **Quick Responses**: Pre-define and quickly insert common phrases, significantly reducing repetitive typing for frequent questions.
+- **Forms**: Agents can send predefined forms mid-conversation using the <Icon icon="square-list" /> action to collect specific, structured data from visitors.
+- **Triggers Integration**: The Inbox integrates with your configured **Triggers** (see the [Triggers documentation](/Features/Triggers)) to automate actions based on visitor behavior or conversation content (e.g., assigning tags, sending auto-messages).
+- **Aura AI Suggestions (Coming soon\!)**: As your Aura AI learns, it can suggest relevant replies or Knowledge Base Articles directly within the agent's chat input field, speeding up response times.
 
 ---
 
 ## Notifications & Alerts
 
-- **In-App Alerts**: Real-time popups and sound alerts
-- **Email Notifications**: For assigned or missed conversations
-- **Browser Push**: Optional push notifications for real-time response readiness
+Stay informed and responsive with configurable notifications, ensuring timely responses to customer inquiries.
 
----
+<Tabs>
+  <Tab title="Agent Notification">
+    Agents can configure various notification types in `Settings > Chat Settings > Chat Preferences`:
+
+    - **_Play Sound (on chat):_** Audio alert for new incoming chats.
+    - **Browser Notification (on chat):** Desktop notification for new incoming chats.
+    - **Play Sound (on message):** Audio alert for new messages within an active chat.
+    - **Browser Notification (on message):** Desktop notification for new messages within an active chat.
+
+    #include_picture_of_agent_notification_settings
+
+    <Tip>
+      Individual agents can customize these global settings in their personal `Notification Settings`
+    </Tip>
+  </Tab>
+  <Tab title="Visitor Notifications">
+    Configure how your visitors receive notifications from the widget, ensuring they stay engaged:
+
+    - **Widget Open on Chat\_:\_**\_ Automatically opens the widget when a new chat starts. \_
+    - **Widget Open on Message:** Automatically opens the widget when a new message is received.
+    - **_Play Sound (on chat):_**\_ Plays a sound for visitors on new chat. \_
+    - **Browser Notification (on chat):** Sends a browser notification to the visitor for new chat.
+    - **_Play Sound (on message):_**\_ Plays a sound for visitors on new messages. \_
+    - **Browser Notification (on message):** Sends a browser notification to the visitor for new messages.
+
+    #include_picture_of_visitor_notification_settings
+  </Tab>
+</Tabs>
 
 ## AI-Powered Support with Aura
 
 <Tip>
-  Will be added soon\!
+  Aura AI integration is actively being developed and will enhance the Inbox with even more intelligent features soon\! The playground tab is currently available for internal testing.Aura AI enhances the Inbox with intelligent features:
 </Tip>
 
-Aura AI enhances the Inbox with intelligent features:
+Once fully integrated, Aura AI will empower your agents with:
 
-- **Suggested Replies**: Based on visitor question and chat context
-- **Intent Detection**: Categorize queries automatically (e.g., billing, support, feedback)
-- **Handoff Flow**: Escalate to human agent with full context
-- **Memory**: Remembers visitor responses during session to personalize replies
+- **Suggested Replies:** Contextual and intelligent reply suggestions based on chat history, KBA content, and Q&A pairs.
+- **Intent Detection:** Automatically categorize visitor queries to help agents quickly understand the user's need, reducing manual tagging.
+- **Smart Handoff:** Seamlessly escalate conversations to human agents with full context when Aura cannot confidently resolve an issue.
+- **Session Memory:** Aura AI retains context throughout a conversation, providing more personalized and relevant responses without repeating questions.
 
 ---
 
 ## Conversation Lifecycle & History
 
-Each conversation has:
+Every conversation in Emplorium captures a complete journey, providing comprehensive context for agents.
 
-- A **full timeline** of messages, notes, and bot actions
-- **Status markers**: Open, Pending, Resolved
-- **Session context**: Original entry source, page URL, timestamp
-- **Export options** (for support analysis or CRM syncing)
+- A **full timeline** of all messages, internal notes, and bot actions within the chat.
+- **Status markers:** Clearly indicate the current status: `Open`, `Pending`, or `Resolved`.
+- **Session context:** Details like the original entry source, page URL, and timestamps provide crucial background.
+- **Export options:** (Coming Soon) Functionality to export conversation transcripts for deeper analysis or integration with external CRM systems.
 
 ---
 
 ## Best Practices
 
-- Use tags consistently to power automations
-- Set up auto-assignment rules to reduce idle conversations
-- Use internal notes for collaboration over Slack/Email
-- Enable AI suggestions for faster and smarter replies
+<Steps>
+  <Step title="Standardize Tagging">
+    Consistently use tags to categorize conversations. This improves searchability, powers reporting, and enables more precise automation workflows. Configure required tags before closing chats in \<Code\>Settings\</Code\> to enforce consistency.
+  </Step>
+  <Step title="Automate Routing">
+    Set up auto-assignment rules in `Settings > Chat Settings > Routing and Limits` to ensure chats are promptly directed to the right agents or departments, reducing idle conversation time.
+  </Step>
+  <Step title="Leverage Internal Notes">
+    Prioritize using the \<Code\>Comment Mode\</Code\> for internal team discussions directly within a visitor's chat thread, rather than external communication tools. This keeps context centralized.
+  </Step>
+  <Step title="Utilize Quick Responses">
+    Build a comprehensive library of Quick Responses to significantly reduce typing time for common questions and ensure consistent messaging.
+  </Step>
+  <Step title="Prepare for Aura AI (When Available)">
+    Familiarize your team with the concept of AI-suggested replies. When Aura AI is fully live, encourage agents to use its insights to resolve issues faster and more
+  </Step>
+</Steps>
 
 ---
 
 ### Next Steps
 
-- [Explore Aura AI Agent Features](/features/aura-ai-agent)
-- [Configure Smart Triggers](/features/trigger-automation)
-- [Customize Inbox Settings](/settings/inbox-customization)
+- [Explore Aura AI Agent Features](/Features/AuraAi) - _Learn how to configure your AI to assist your team._
+- [Configure Smart Triggers](/Features/Triggers) - _Automate actions based on specific visitor behaviors._
+- [Customize Inbox Settings](/essentials/settings) - _Tailor notifications, routing, and more to your team's needs._
