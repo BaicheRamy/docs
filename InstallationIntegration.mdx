@@ -1,12 +1,22 @@
 ---
-title: "Full Integration Guide"
-description: "Explore all available methods to install and integrate the Emplorium chat widget with your site or app. This guide covers snippet-based installs, framework SDKs, and platform-specific setups in detail."
+title: "Full Integration Guide: Connecting Emplorium to Your Platform"
+description: "Emplorium is designed for flexible deployment. All integration methods ensure the widget script loads efficiently and reports the installation status using your unique account ID, connecting your website directly to your Emplorium workspace."
 icon: "Puzzle-piece"
 ---
 
-## Chat Widget Integration
+## 1. Chat Widget Integration: Basic Snippet (HTML)
 
-Choose how to install the Emplorium widget based on the technology you're using. All methods load the widget script and report the installation status using your unique account ID.
+This is the most universal method for integrating the Emplorium chat widget into any standard HTML website.
+
+### Where to Find Your Snippet Code
+
+1. Log in to your Emplorium account.
+2. Navigate to **Settings \> For Developers \> Installation Guide**.
+3. Copy the provided JavaScript embed code.
+
+<Frame>
+  ![Integration Pn](/images/integration.png)
+</Frame>
 
 ### Snippet Code (HTML)
 
@@ -39,7 +49,9 @@ Choose how to install the Emplorium widget based on the technology you're using.
 </script>
 ```
 
----
+### Placement
+
+Paste this entire snippet just before the closing `</head>` tag of your website's HTML file. This ensures the widget loads asynchronously without blocking your page content.
 
 ## React Integration
 
@@ -195,12 +207,14 @@ function App() {
 
 ## CMS & No-Code Platforms
 
+For content management systems and no-code platforms, you'll typically use the standard HTML snippet code and paste it into a designated "custom code" or "header script" section.
+
 ### WordPress
 
-1. Install plugin: _Insert Headers and Footers_.
-2. Go to **Settings → Insert Headers and Footers**.
-3. Paste widget script in the header section.
-4. Save and reload site.
+1. Install a plugin like **"Insert Headers and Footers"** (or similar, from the WordPress Plugin Directory)
+2. Go to `Settings → Insert Headers and Footers` in your WordPress admin dashboard.
+3. Paste the **basic HTML snippet code** into the **"Scripts in Header"** section
+4. Save your changes and reload your WordPress site to see the widget.
 
 ### Shopify
 
@@ -228,16 +242,21 @@ function App() {
 
 ---
 
-### Final Checklist
+### Final Checklist for Successful Installation
 
-- ✅ Script is placed before `</head>` or `</body>` depending on setup
-- ✅ Account ID is set correctly in the snippet (`acc-9700d`)
-- ✅ `fetch` status call is not blocked
-- ✅ No console errors after loading the page
+Before concluding, double-check these common points to ensure your Emplorium widget is installed correctly:
+
+- ✅ The Emplorium widget script is placed correctly: before `</head>` or `</body>` depending on setup
+- On the same page in emplorium's integration settings, click the "**Check Installation**" button to check if emplorium detected the installation.
+- ✅ Your unique Emplorium **Account ID** (`acc-9700d `in examples) is correctly inserted in the snippet or SDK component
+- ✅ Ensure that any `fetch` status calls (if part of your snippet for reporting installation) are not being blocked by browser extensions or ad-blockers during testing (though this usually doesn't affect widget functionality).
+- ✅ Check your browser's developer console for any JavaScript errors after loading the page with the widget.
 
 ---
 
 ### Need Help?
 
-If you're stuck, [contact support](https://dev.emplorium.io/help-docs) or ask your teammates to help finish setup.
+If you encounter any issues during the installation process, don't hesitate to:
 
+- **Contact Emplorium Support**: Our team is ready to assist you.
+- **Consult Your Teammates**: Share this guide with your development team for assistance.

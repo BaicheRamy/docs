@@ -1,5 +1,5 @@
 ---
-title: "Profiles: Understanding Your Customer in Real-Time"
+title: "Profiles"
 description: "Emplorium creates a unique profile for each visitor interacting with your chat widget. This profile is continuously enriched with data collected during the session – through conversations, forms, and API updates. While current profiles are session-based, they are vital for delivering contextual and informed support during an active chat."
 icon: "User"
 ---
@@ -27,7 +27,7 @@ Understanding these core concepts is essential for leveraging Emplorium's profil
 This means:
 
 - If the same visitor returns via a different browser, device, or clears their cookies, a new, separate profile will be generated for that new session.
-- Emplorium does **not** perform cross-device or long-term re-identification of visitors. &lt;/Callout\> Each profile is tied to a specific session. If a visitor closes their browser and reopens it, or uses a different device, they will be identified as a "new" visitor in Emplorium, and a new profile will be created.
+- Emplorium does **not** perform cross-device or long-term re-identification of visitors. \</Callout\> Each profile is tied to a specific session. If a visitor closes their browser and reopens it, or uses a different device, they will be identified as a "new" visitor in Emplorium, and a new profile will be created.
 
 ### 2. Dynamic Data Sources
 
@@ -49,16 +49,16 @@ Admins have full control over defining custom profile fields to capture the spec
   <Step title="Create New Data Field">
     Click "Create a new Datafield". You'll need to provide:
 
-    - **Name:** (e.g., `customer_segment`) 
-    - **Label:** (e.g., `Customer Segment`) 
-    - **Format:** Choose the input type (Text, Textarea, Select, Radio, Checkbox). 
+    - **Name:** (e.g., `customer_segment`)
+    - **Label:** (e.g., `Customer Segment`)
+    - **Format:** Choose the input type (Text, Textarea, Select, Radio, Checkbox).
     - **Validation (Optional):** Include regex for Text fields if specific format validation is required.
   </Step>
   <Step title="Map to Forms & Flows">
     These custom fields can then be used in:
 
-    - **Forms:** When creating a form, you can select these data fields to gather specific information from visitors. 
-    - **Flows:** Data collected via forms in a Flow can directly update these profile fields using the "Send Form" block. 
+    - **Forms:** When creating a form, you can select these data fields to gather specific information from visitors.
+    - **Flows:** Data collected via forms in a Flow can directly update these profile fields using the "Send Form" block.
     - **Aura AI:** Aura AI can reference these fields for personalized responses.
   </Step>
 </Steps>
@@ -69,12 +69,12 @@ When viewing an active conversation in the Inbox, the right-side panel (Visitor 
 
 <Tabs>
   <Tab title="Profile Tab">
-    This section summarizes core visitor information and custom attributes: 
+    This section summarizes core visitor information and custom attributes:
 
-    - **Basic Details:** Includes the Department the chat is assigned to, Priority (set by agent), and current Assignee(s). 
-    - **Attributes:** Displays all custom profile fields you've defined, populated with data. 
+    - **Basic Details:** Includes the Department the chat is assigned to, Priority (set by agent), and current Assignee(s).
+    - **Attributes:** Displays all custom profile fields you've defined, populated with data.
     - **Visitor Data Device:** An expandable section with technical details like Time on Site, Browser, Device Type (desktop/laptop), IP address, and Country.
-    - **Notes: **Allows agents to add internal, private notes about this specific user that are visible only to other agents. 
+    - \*\*Notes: \*\*Allows agents to add internal, private notes about this specific user that are visible only to other agents.
   </Tab>
   <Tab title="Browse History Tab">
     Provides a chronological audit log of the visitor's navigation within your targeted website during their current session, tracking the URLs they've visited.
@@ -114,10 +114,9 @@ Leveraging profiles enhances personalization and automation:
     Aura AI can reference profile values during a conversation to provide personalized answers (e.g., "Hi [Visitor Name], it looks like your current plan is [Plan Type]. How can I help?").
   </Card>
   <Card title="Dynamic Routing & Automation" icon="route">
-    Use profile attributes (e.g., `department_interest`, `product_tier`) as conditions in your [<u>Triggers</u>](/Features/Triggers)[ ](/Features/Triggers)or [<u>Flows</u>](/Features/Flows)[ ](/Features/Flows)to route chats to the correct department or agent, or to initiate specific automated messages.
+    Use profile attributes (e.g., `department_interest`, `product_tier`) as conditions in your [<u>Triggers</u> ](/Features/Triggers)or [<u>Flows</u> ](/Features/Flows)to route chats to the correct department or agent, or to initiate specific automated messages.
   </Card>
 </CardGroup>
-
 
 ---
 
@@ -139,7 +138,7 @@ We are continuously evolving Emplorium's profile capabilities to empower even de
 - **Profile Export/Import:** Functionality for Admins to export profile data for external analysis or import predefined customer profiles into Emplorium.
 - **Profile Segments:** The ability to create dynamic segments based on various profile attributes, allowing for highly targeted Flows, Triggers, and AI behaviors.
 
-<Update label="06/21/2025" description="">
+<Update label="06/21/2025" description>
   **Planned Release:** Persistent Profiles are a high-priority item on our roadmap for Q1 2026.
 </Update>
 
