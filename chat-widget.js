@@ -1,14 +1,13 @@
-
-  ((function(){
+ ((function(){
   var loadWidget = function(){
-  var script = "https://widget-service-dev.emplorium.io/acc-3mp1o/init.js"
+  var script = "https://widget-service.emplorium.io/acc-3mp1o/init.js"
   var x = document.createElement('script');
   var sx = document.getElementsByTagName('script')[0];
   x.src = script; x.async = true;
   sx.parentNode.insertBefore(x,sx)
   
 
-  fetch("https://auth-service-dev.emplorium.io/widget-init-status", {
+  fetch("https://auth-service.emplorium.io/widget-init-status", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -26,7 +25,3 @@
   window.attachEvent("onload",loadWidget)
   }
   })())
-
-
-
-
