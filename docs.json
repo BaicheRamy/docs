@@ -76,8 +76,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/Dark.svg",
-    "dark": "/logo/Light.svg"
+    "light": "/images/emplorium_fav.svg",
+    "dark": "/images/emplorium_fav.svg"
   },
   
  "contextual": {
