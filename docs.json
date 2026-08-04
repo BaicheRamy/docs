@@ -7,7 +7,10 @@
     "light": "#645DFF",
     "dark": "#645DFF"
   },
-  "favicon": "images/empicon.svg",
+  "favicon": {
+    "light": "/images/emplorium_fav.svg",
+    "dark": "/images/emplorium_fav.svg"
+  },
   "navigation": {
     "tabs": [
       {
